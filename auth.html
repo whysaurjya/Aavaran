@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AAVARAN Authentication - Sign in to your AI-Powered Student Ecosystem to manage attendance, calculate CGPA, and scan lecture notes.">
+    <meta name="keywords" content="AAVARAN, student ecosystem, login, student sign up, Google login, attendance, CGPA">
+    <meta name="author" content="Aavaran Student Ecosystem">
+    
+    <!-- Page Title -->
+    <title>Student Authentication | AAVARAN - AI Student Ecosystem</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-body">
+
+    <!-- Master Screen Card Frame -->
+    <main class="auth-master-container">
+        <div class="auth-phone-card">
+
+            <!-- Top Curved Tech Cover Header -->
+            <header class="auth-cover-header">
+                <!-- Back Navigation Button -->
+                <button type="button" class="auth-back-btn" id="auth-back-btn" aria-label="Go Back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- AAVARAN Logo & Badge -->
+                <div class="auth-cover-brand">
+                    <a href="index.html" class="auth-cover-logo" aria-label="Aavaran Home">
+                        <img src="images/logo.svg" alt="Aavaran Logo" style="max-height: 38px; filter: brightness(0) invert(1);">
+                    </a>
+                    <span class="auth-cover-badge">
+                        <i class="fa-solid fa-graduation-cap"></i> Student AI Ecosystem
+                    </span>
+                </div>
+
+                <!-- Academic Tech SVG Graphic -->
+                <div class="auth-cover-svg-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 380 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="190" cy="70" r="90" stroke="#93C5FD" stroke-opacity="0.1" stroke-width="1.5"/>
+                        <circle cx="190" cy="70" r="60" stroke="#93C5FD" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6 6"/>
+                        <circle cx="190" cy="70" r="30" stroke="#93C5FD" stroke-opacity="0.3" stroke-width="1.5"/>
+                        <line x1="190" y1="70" x2="260" y2="30" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="110" cy="45" r="4" fill="#93C5FD"/>
+                        <circle cx="270" cy="85" r="4" fill="#93C5FD"/>
+                        <circle cx="230" cy="110" r="3" fill="#2563EB"/>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- Authentication Views Container -->
+            <div class="auth-views-container">
+
+                <!-- SCREEN 1 — WELCOME / ONBOARDING -->
+                <section class="auth-view-screen is-active" id="view-welcome" aria-label="Welcome">
+                    <div class="auth-hero-title-group">
+                        <h1 class="auth-hero-title">Manage College Life Daily</h1>
+                        <p class="auth-hero-sub">Track attendance, calculate credit-weighted GPAs, and scan lecture notes with AI.</p>
+                    </div>
+
+                    <!-- Onboarding Feature Chips -->
+                    <div class="auth-feature-chips-row">
+                        <span class="auth-chip"><i class="fa-solid fa-user-check"></i> Attendance</span>
+                        <span class="auth-chip"><i class="fa-solid fa-award"></i> CGPA Calc</span>
+                        <span class="auth-chip"><i class="fa-solid fa-camera"></i> Note OCR</span>
+                    </div>
+
+                    <!-- Main Action Buttons -->
+                    <div class="d-grid gap-2 mb-3">
+                        <button type="button" class="auth-card-btn auth-card-btn-primary" data-auth-switch="login">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Sign In with Student ID</span>
+                        </button>
+                        <button type="button" class="auth-card-btn auth-card-btn-outline" data-auth-switch="signup">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Create Student Account</span>
+                        </button>
+                    </div>
+
+                    <!-- OR Divider -->
+                    <div class="auth-divider">
+                        <span>OR CONTINUE WITH</span>
+                    </div>
+
+                    <!-- Social Actions (Google) -->
+                    <div class="social-buttons-grid mb-3">
+                        <button type="button" class="auth-card-btn auth-card-btn-google btn-google-trigger" aria-label="Continue with Google">
+                            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                                <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.616z"/>
+                                <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"/>
+                                <path fill="#FBBC05" d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.173 0 7.547 0 9s.347 2.827.957 4.039l3.007-2.332z"/>
+                                <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.166 6.656 3.58 9 3.58z"/>
+                            </svg>
+                            <span>Continue with Google</span>
+                        </button>
+                    </div>
+
+                    <button type="button" class="auth-card-btn auth-card-btn-guest btn-guest-trigger" aria-label="Continue as Guest">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Explore as Campus Guest</span>
+                    </button>
+                </section>
+
+                <!-- SCREEN 2 — LOGIN -->
+                <section class="auth-view-screen" id="view-login" aria-label="Login">
+                    <div class="auth-hero-title-group">
+                        <h1 class="auth-hero-title">Welcome Back</h1>
+                        <p class="auth-hero-sub">Access your student portal, bunk meters, and marksheet simulator.</p>
+                    </div>
+
+                    <form id="form-login" novalidate>
+                        <!-- Email or Phone Field -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="login-email">University Email or Roll Number</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-envelope auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="login-email" class="auth-input" placeholder="e.g. aarav.sharma@college.edu.in" required autocomplete="username">
+                            </div>
+                        </div>
+
+                        <!-- Password Field with Toggle -->
+                        <div class="auth-form-group mb-2">
+                            <label class="auth-label" for="login-password">Password</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-lock auth-input-icon" aria-hidden="true"></i>
+                                <input type="password" id="login-password" class="auth-input" placeholder="••••••••" required autocomplete="current-password">
+                                <button type="button" class="auth-toggle-pass-btn" aria-label="Toggle password visibility">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Meta Row: Remember Me & Forgot Password -->
+                        <div class="auth-form-meta-row mb-3">
+                            <label class="auth-checkbox-label">
+                                <input type="checkbox" id="login-remember" class="auth-checkbox" checked>
+                                <span>Remember Me</span>
+                            </label>
+                            <a href="#forgot" class="auth-forgot-link" data-auth-switch="forgot">Forgot Password?</a>
+                        </div>
+
+                        <!-- Primary CTA Button -->
+                        <button type="submit" class="auth-card-btn auth-card-btn-primary mb-3">
+                            <span>Sign In to Aavaran</span>
+                        </button>
+                    </form>
+
+                    <!-- OR Divider -->
+                    <div class="auth-divider">
+                        <span>OR CONTINUE WITH</span>
+                    </div>
+
+                    <!-- Social Login Grid (Google) -->
+                    <div class="social-buttons-grid mb-3">
+                        <button type="button" class="auth-card-btn auth-card-btn-google btn-google-trigger" aria-label="Continue with Google">
+                            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                                <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.616z"/>
+                                <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"/>
+                                <path fill="#FBBC05" d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.173 0 7.547 0 9s.347 2.827.957 4.039l3.007-2.332z"/>
+                                <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.166 6.656 3.58 9 3.58z"/>
+                            </svg>
+                            <span>Continue with Google</span>
+                        </button>
+                    </div>
+
+                    <!-- Footer Switcher Link -->
+                    <div class="auth-bottom-switch-row">
+                        <span>New student?</span>
+                        <a href="#signup" class="auth-bottom-switch-link" data-auth-switch="signup">Create Student Account</a>
+                    </div>
+                </section>
+
+                <!-- SCREEN 3 — SIGN UP -->
+                <section class="auth-view-screen" id="view-signup" aria-label="Sign Up">
+                    <div class="auth-hero-title-group">
+                        <h1 class="auth-hero-title">Create Student Account</h1>
+                        <p class="auth-hero-sub">Join thousands of students leveling up their college experience.</p>
+                    </div>
+
+                    <form id="form-signup" novalidate>
+                        <!-- Full Name -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="signup-name">Full Name</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-user auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="signup-name" class="auth-input" placeholder="e.g. Aarav Sharma" required autocomplete="name">
+                            </div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="signup-email">University / Personal Email</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-envelope auth-input-icon" aria-hidden="true"></i>
+                                <input type="email" id="signup-email" class="auth-input" placeholder="student@college.edu.in" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="signup-phone">Phone / WhatsApp Number</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-phone auth-input-icon" aria-hidden="true"></i>
+                                <input type="tel" id="signup-phone" class="auth-input" placeholder="+91 98765 43210" required autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="signup-password">Password</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-lock auth-input-icon" aria-hidden="true"></i>
+                                <input type="password" id="signup-password" class="auth-input" placeholder="Min. 8 characters" required autocomplete="new-password">
+                                <button type="button" class="auth-toggle-pass-btn" aria-label="Toggle password visibility">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="auth-form-group mb-3">
+                            <label class="auth-label" for="signup-confirm-password">Confirm Password</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-shield-check auth-input-icon" aria-hidden="true"></i>
+                                <input type="password" id="signup-confirm-password" class="auth-input" placeholder="Re-type password" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <!-- Privacy Agreement Checkbox -->
+                        <div class="auth-form-meta-row justify-content-start gap-2 mb-3">
+                            <label class="auth-checkbox-label">
+                                <input type="checkbox" id="signup-agree" class="auth-checkbox" checked required>
+                                <span>I agree to AAVARAN's Student Terms &amp; Privacy Policy</span>
+                            </label>
+                        </div>
+
+                        <!-- Primary CTA Button -->
+                        <button type="submit" class="auth-card-btn auth-card-btn-primary mb-3">
+                            <span>Register Student Account</span>
+                        </button>
+                    </form>
+
+                    <!-- OR Divider -->
+                    <div class="auth-divider">
+                        <span>OR JOIN WITH</span>
+                    </div>
+
+                    <!-- Social Sign Up Grid (Google) -->
+                    <div class="social-buttons-grid mb-3">
+                        <button type="button" class="auth-card-btn auth-card-btn-google btn-google-trigger" aria-label="Continue with Google">
+                            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                                <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.616z"/>
+                                <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"/>
+                                <path fill="#FBBC05" d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.173 0 7.547 0 9s.347 2.827.957 4.039l3.007-2.332z"/>
+                                <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.166 6.656 3.58 9 3.58z"/>
+                            </svg>
+                            <span>Continue with Google</span>
+                        </button>
+                    </div>
+
+                    <!-- Footer Switcher Link -->
+                    <div class="auth-bottom-switch-row">
+                        <span>Already registered?</span>
+                        <a href="#login" class="auth-bottom-switch-link" data-auth-switch="login">Sign In</a>
+                    </div>
+                </section>
+
+                <!-- SCREEN 4 — OTP VERIFICATION -->
+                <section class="auth-view-screen" id="view-otp" aria-label="OTP Verification">
+                    <div class="auth-hero-title-group">
+                        <h1 class="auth-hero-title">Verify Student Identity</h1>
+                        <p class="auth-hero-sub">Enter the verification code sent to your email/phone.</p>
+                    </div>
+
+                    <form id="form-otp" novalidate>
+                        <div class="otp-pill-grid">
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-pill-box" autofocus required>
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-pill-box" required>
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-pill-box" required>
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-pill-box" required>
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-pill-box" required>
+                            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-pill-box" required>
+                        </div>
+
+                        <div class="otp-pill-timer-row">
+                            <span>Resend code in <strong id="otp-timer-count">00:45</strong></span>
+                            <button type="button" id="otp-resend-btn" class="otp-pill-resend-btn">Resend OTP</button>
+                        </div>
+
+                        <button type="submit" class="auth-card-btn auth-card-btn-primary mb-3">
+                            <span>Verify &amp; Continue</span>
+                        </button>
+                    </form>
+
+                    <div class="auth-bottom-switch-row">
+                        <a href="#signup" class="auth-bottom-switch-link" data-auth-switch="signup">Change Info</a>
+                    </div>
+                </section>
+
+                <!-- SCREEN 5 — FORGOT PASSWORD -->
+                <section class="auth-view-screen" id="view-forgot" aria-label="Forgot Password">
+                    <div class="auth-hero-title-group">
+                        <h1 class="auth-hero-title">Reset Password</h1>
+                        <p class="auth-hero-sub">Enter your registered student email or phone number.</p>
+                    </div>
+
+                    <form id="form-forgot" novalidate>
+                        <div class="auth-form-group mb-4">
+                            <label class="auth-label" for="forgot-target">University Email or Phone Number</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-envelope-open-text auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="forgot-target" class="auth-input" placeholder="student@college.edu.in or +91..." required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="auth-card-btn auth-card-btn-primary mb-3">
+                            <span>Send Password Reset Link</span>
+                        </button>
+                    </form>
+
+                    <div class="auth-bottom-switch-row">
+                        <a href="#login" class="auth-bottom-switch-link" data-auth-switch="login">Back to Sign In</a>
+                    </div>
+                </section>
+
+                <!-- SCREEN 6 — COMPLETE PROFILE -->
+                <section class="auth-view-screen" id="view-complete-profile" aria-label="Complete Profile">
+                    <div class="auth-hero-title-group">
+                        <h1 class="auth-hero-title">Configure Academic Profile</h1>
+                        <p class="auth-hero-sub">Set up your degree and university to tailor attendance thresholds and grading scales.</p>
+                    </div>
+
+                    <form id="form-complete-profile" novalidate>
+                        <!-- Profile Photo Upload -->
+                        <div class="profile-avatar-picker-wrap">
+                            <div class="profile-avatar-circle" id="avatar-trigger" title="Upload Student Photo">
+                                <img src="images/team-img-1.jpg" id="avatar-preview-img" class="profile-avatar-img" alt="Student Avatar">
+                                <span class="avatar-edit-overlay"><i class="fa-solid fa-camera"></i></span>
+                            </div>
+                            <input type="file" id="avatar-file-input" accept="image/*" class="d-none">
+                            <span class="avatar-picker-hint">Tap photo to change profile picture</span>
+                        </div>
+
+                        <!-- Full Name -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="profile-name">Full Name</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-user auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="profile-name" class="auth-input" value="Aarav Sharma" placeholder="Your name" required>
+                            </div>
+                        </div>
+
+                        <!-- Location / Campus City -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="profile-location">Campus / City</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-location-dot auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="profile-location" class="auth-input" value="Delhi NCR, India" placeholder="City or Campus Location" required>
+                            </div>
+                        </div>
+
+                        <!-- Degree / Department -->
+                        <div class="auth-form-group">
+                            <label class="auth-label" for="profile-occupation">Program / Major</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-graduation-cap auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="profile-occupation" class="auth-input" value="B.Tech Computer Science (Sem 5)" placeholder="e.g. B.Tech CSE, MBA, MBBS" required>
+                            </div>
+                        </div>
+
+                        <!-- University / College -->
+                        <div class="auth-form-group mb-4">
+                            <label class="auth-label" for="profile-org">University / Institute</label>
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-building-columns auth-input-icon" aria-hidden="true"></i>
+                                <input type="text" id="profile-org" class="auth-input" value="National Institute of Technology" placeholder="College or University Name">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="auth-card-btn auth-card-btn-primary mb-2">
+                            <span>Launch AAVARAN Dashboard</span>
+                        </button>
+                    </form>
+
+                    <div class="auth-bottom-switch-row">
+                        <a href="index.html" class="auth-bottom-switch-link">Skip for Now</a>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Security Trust Badge Footer -->
+            <footer class="auth-security-footer">
+                <i class="fa-solid fa-shield-check"></i>
+                <span>Private &amp; Secure Student Session &bull; Client Encrypted</span>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="auth-toast" class="auth-toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span class="toast-msg">Success</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

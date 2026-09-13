@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aavaran Campus Expense Tracker - Monitor spending across textbooks, canteen meals, tuition fees, hostel rent, and metro passes with visual category distribution and monthly student budgets.">
+    <meta name="keywords"
+        content="student expense tracker, college budget, campus expenses, student money management, allowance tracker, Aavaran">
+    <meta name="author" content="Aavaran Ecosystem">
+    <!-- Page Title -->
+    <title>Campus Expense Tracker - Aavaran</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="images/favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- Dedicated Farm Expenses Css -->
+    <link href="css/farm-expenses.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="header-inner-row">
+                        <div class="header-action-col header-action-col--left">
+                            <button class="header-btn" id="drawer-open-btn" type="button"
+                                aria-label="Open Navigation Menu" aria-controls="nav-drawer" aria-expanded="false">
+                                <span class="hamburger-icon">
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="header-brand-col">
+                            <a class="navbar-brand header-logo" href="index.html" aria-label="Aavaran Home">
+                                <img src="images/logo.svg" height="46" width="165" alt="Aavaran Logo">
+                            </a>
+                        </div>
+
+                        <div class="header-action-col header-action-col--right">
+                            <button class="header-btn" id="profile-open-btn" type="button"
+                                aria-label="Student Account Menu" aria-controls="account-sheet" aria-expanded="false">
+                                <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                <span class="profile-badge-dot" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Navigation Drawer Start -->
+    <div class="nav-drawer-backdrop" id="nav-drawer-backdrop"></div>
+    <aside class="nav-drawer" id="nav-drawer" aria-label="Site Navigation" aria-hidden="true">
+        <div class="nav-drawer__header">
+            <div class="nav-drawer__brand">
+                <img src="images/logo.svg" height="32" width="120" alt="Aavaran Logo">
+                <span class="nav-drawer__badge"><i class="fa-solid fa-graduation-cap"></i> Student AI</span>
+            </div>
+            <button class="nav-drawer__close-btn" id="nav-drawer-close" type="button"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="nav-drawer__body">
+            <ul class="nav-drawer__menu">
+                <li>
+                    <a href="index.html" class="nav-drawer__link" data-nav="index.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="nav-drawer__label">HOME</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-drawer__link" data-nav="about.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="nav-drawer__label">ABOUT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#features" class="nav-drawer__link" data-nav="#features">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <span class="nav-drawer__label">FEATURES</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="quick-actions.html" class="nav-drawer__link" data-nav="quick-actions.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-toolbox"></i></span>
+                        <span class="nav-drawer__label">QUICK TOOLS</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fertilizer-calculator.html" class="nav-drawer__link" data-nav="fertilizer-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-calendar-check"></i></span>
+                        <span class="nav-drawer__label">ATTENDANCE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pesticide-calculator.html" class="nav-drawer__link" data-nav="pesticide-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span class="nav-drawer__label">CGPA / SGPA</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="crop-calendar.html" class="nav-drawer__link" data-nav="crop-calendar.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-stopwatch"></i></span>
+                        <span class="nav-drawer__label">EXAM TIMETABLE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-drawer__link" data-nav="contact.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-headset"></i></span>
+                        <span class="nav-drawer__label">CONTACT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- Navigation Drawer End -->
+
+    <!-- Account Menu Sheet / Dropdown Start -->
+    <div class="account-sheet-backdrop" id="account-sheet-backdrop"></div>
+    <div class="account-sheet" id="account-sheet" aria-label="Student Account Menu" aria-hidden="true">
+        <div class="account-sheet__header">
+            <div class="account-user-card">
+                <div class="account-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                        alt="Student Avatar" class="account-avatar-img">
+                    <span class="account-online-dot"></span>
+                </div>
+                <div class="account-user-info">
+                    <span class="account-user-name">Aarav Sharma</span>
+                    <span class="account-user-role"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE &bull; #AV-2026</span>
+                </div>
+            </div>
+            <button class="account-sheet__close-btn" id="account-sheet-close" type="button"
+                aria-label="Close account menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="account-sheet__body">
+            <div class="account-sheet__stats">
+                <div class="account-stat-item"><span class="stat-number">8.92</span><span
+                        class="stat-label">CGPA</span></div>
+                <div class="account-stat-item"><span class="stat-number">86%</span><span
+                        class="stat-label">Attendance</span></div>
+                <div class="account-stat-item"><span class="stat-number">12/14</span><span
+                        class="stat-label">Assignments</span></div>
+            </div>
+
+            <div class="account-sheet__nav-group">
+                <div class="account-group-title">Academic Activity</div>
+                <ul class="account-sheet__list">
+                    <li>
+                        <a href="about.html#profile" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-id-card"></i></span>
+                            <span class="account-item__text">Academic Profile</span>
+                            <span class="account-item__tag">Enrolled</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="service.html#summarizer" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-bookmark"></i></span>
+                            <span class="account-item__text">Saved AI Summaries</span>
+                            <span class="account-item__badge">18</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="crop-calendar.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                            <span class="account-item__text">Course &amp; Exam History</span>
+                            <span class="account-item__badge">Sem 5</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="account-sheet__footer">
+            <button type="button" class="account-sheet__logout-btn" id="logout-demo-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+            </button>
+        </div>
+    </div>
+    <!-- Account Menu Sheet / Dropdown End -->
+
+    <!-- Scanner Modal Start -->
+    <div class="scanner-overlay" id="scanner-modal">
+        <div class="scanner-container">
+            <button class="scanner-close-btn" id="scanner-close" aria-label="Close Scanner">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="scanner-header">
+                <h3>Aavaran AI Note Scanner</h3>
+                <p>Point camera at lecture slides, textbook, or whiteboard for instant OCR &amp; study summaries</p>
+            </div>
+            <div class="scanner-viewfinder">
+                <div class="scanner-frame">
+                    <div class="scanner-corner top-left"></div>
+                    <div class="scanner-corner top-right"></div>
+                    <div class="scanner-corner bottom-left"></div>
+                    <div class="scanner-corner bottom-right"></div>
+                    <div class="scanner-scanline"></div>
+                </div>
+            </div>
+            <div class="scanner-actions">
+                <button class="scanner-action-btn" title="Upload Document or PDF"><i class="fa-solid fa-file-arrow-up"></i></button>
+                <button class="scanner-action-btn primary" title="Capture Notes"><i class="fa-solid fa-camera"></i></button>
+                <button class="scanner-action-btn" title="Toggle Flash"><i class="fa-solid fa-bolt"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Scanner Modal End -->
+
+    <!-- Floating Bottom Navigation Start -->
+    <nav class="floating-bottom-nav" aria-label="Primary navigation">
+        <div class="floating-bottom-nav__bar">
+            <a href="index.html" class="floating-bottom-nav__item" data-nav="index.html" aria-label="Home">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+            </a>
+            <a href="pesticide-calculator.html" class="floating-bottom-nav__item" data-nav="pesticide-calculator.html" aria-label="Academics">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+            </a>
+            <a href="#scanner-modal" class="floating-bottom-nav__item floating-bottom-nav__item--center scanner-trigger-btn"
+                id="scanner-trigger" aria-label="Scan Notes">
+                <span class="floating-bottom-nav__fab">
+                    <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                </span>
+            </a>
+            <a href="farm-expenses.html" class="floating-bottom-nav__item active" data-nav="farm-expenses.html" aria-label="Expenses">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-wallet" aria-hidden="true"></i></span>
+            </a>
+            <a href="quick-actions.html" class="floating-bottom-nav__item" data-nav="quick-actions.html" aria-label="Tools">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-toolbox" aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </nav>
+    <!-- Floating Bottom Navigation End -->
+
+    <!-- Main Page Section Wrapper -->
+    <main class="fet-page-wrapper">
+        <div class="fet-desktop-container">
+
+            <!-- Desktop Eyebrow Label -->
+            <div class="fet-screen-eyebrow">
+                <i class="fa-solid fa-wallet"></i> STUDENT BUDGET &amp; CAMPUS EXPENSES
+            </div>
+
+            <!-- Mobile App Screen Frame -->
+            <div class="fet-phone-frame wow fadeInUp" data-wow-delay="0.1s">
+
+                <!-- Header: Back Arrow + Centered Title -->
+                <div class="fet-top-header">
+                    <a href="quick-actions.html" class="fet-header-btn" aria-label="Go Back">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <h1 class="fet-screen-title">Campus Expenses</h1>
+                    <button type="button" class="fet-header-btn" id="fet-info-btn" aria-label="Expense Guidelines">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                </div>
+
+                <!-- Month Selector Pill -->
+                <div class="fet-month-selector-wrapper">
+                    <button type="button" class="fet-month-pill-btn" id="fet-month-btn">
+                        <span id="fet-month-text">September 2026</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="fet-month-dropdown-menu" id="fet-month-dropdown">
+                        <div class="fet-month-options-list" id="fet-month-options-list">
+                            <!-- Injected dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense Summary Card -->
+                <div class="fet-summary-card">
+                    <div class="fet-summary-label">Total Monthly Outflow</div>
+                    <div class="fet-summary-amount-row">
+                        <span class="fet-currency-symbol">&#8377;</span>
+                        <span class="fet-summary-total" id="fet-total-amount">11,809</span>
+                    </div>
+
+                    <!-- Donut Chart & Legend Row -->
+                    <div class="fet-chart-legend-row">
+                        <div class="fet-donut-container">
+                            <svg class="fet-donut-svg" id="fet-donut-svg" viewBox="0 0 135 135">
+                                <!-- Slices injected via JS -->
+                            </svg>
+                            <div class="fet-donut-center-circle">
+                                <span class="fet-center-label">Campus</span>
+                                <span class="fet-center-val">Budget</span>
+                            </div>
+                        </div>
+
+                        <!-- Legend List -->
+                        <div class="fet-legend-list" id="fet-legend-list">
+                            <!-- Injected dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Entries Section -->
+                <div class="fet-recent-section">
+                    <div class="fet-recent-header">
+                        <h2 class="fet-recent-title">Recent Transactions</h2>
+                        <span class="fet-entries-count" id="fet-entries-count">8 transactions</span>
+                    </div>
+
+                    <div class="fet-entries-list" id="fet-entries-list">
+                        <!-- Injected dynamically via JS -->
+                    </div>
+                </div>
+
+                <!-- Bottom Action Button: + Add Expense -->
+                <div class="fet-bottom-action-wrapper">
+                    <button type="button" class="fet-add-btn" id="fet-add-expense-btn">
+                        <i class="fa-solid fa-plus"></i> Add Student Expense
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bottom Sheet / Modal: Add Expense -->
+    <div class="fet-modal-backdrop" id="fet-modal-backdrop"></div>
+    <div class="fet-modal-sheet" id="fet-modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
+        <div class="fet-modal-handle"></div>
+        <div class="fet-modal-header">
+            <h3 class="fet-modal-title" id="modal-add-title">Log Student Expense</h3>
+            <button type="button" class="fet-modal-close-btn" id="fet-modal-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Category Select Pills -->
+        <div class="fet-input-group">
+            <label class="fet-input-label">Expense Category</label>
+            <div class="fet-category-pills-grid">
+                <div class="fet-cat-pill active" data-cat="fertilizer">
+                    <i class="fa-solid fa-book" style="color:#3B82F6;"></i> Books
+                </div>
+                <div class="fet-cat-pill" data-cat="pesticide">
+                    <i class="fa-solid fa-utensils" style="color:#F59E0B;"></i> Mess/Food
+                </div>
+                <div class="fet-cat-pill" data-cat="labor">
+                    <i class="fa-solid fa-graduation-cap" style="color:#034bb9;"></i> Tuition
+                </div>
+                <div class="fet-cat-pill" data-cat="irrigation">
+                    <i class="fa-solid fa-building" style="color:#06B6D4;"></i> Rent
+                </div>
+                <div class="fet-cat-pill" data-cat="diesel">
+                    <i class="fa-solid fa-bus" style="color:#EF4444;"></i> Metro/Bus
+                </div>
+                <div class="fet-cat-pill" data-cat="others">
+                    <i class="fa-solid fa-film" style="color:#8B5CF6;"></i> Subs
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Title -->
+        <div class="fet-input-group">
+            <label class="fet-input-label" for="fet-input-title">Description / Item</label>
+            <input type="text" id="fet-input-title" class="fet-text-input" placeholder="e.g. Canteen lunch, Python Course, Metro pass" required>
+        </div>
+
+        <!-- Amount (INR) -->
+        <div class="fet-input-group">
+            <label class="fet-input-label" for="fet-input-amount">Amount (&#8377;)</label>
+            <input type="number" id="fet-input-amount" class="fet-text-input" placeholder="e.g. 250" min="1" step="1" required>
+        </div>
+
+        <!-- Date -->
+        <div class="fet-input-group">
+            <label class="fet-input-label" for="fet-input-date">Date</label>
+            <input type="date" id="fet-input-date" class="fet-text-input">
+        </div>
+
+        <!-- Submit Button -->
+        <div style="margin-top:20px;">
+            <button type="button" class="fet-add-btn" id="fet-save-expense-btn">
+                <i class="fa-solid fa-check"></i> Save Expense
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="about-footer">
+                        <div class="footer-logo">
+                            <img src="images/footer-logo.svg" height="48" width="165" alt="Aavaran Logo">
+                        </div>
+                        <div class="about-footer-content">
+                            <p>AI-powered student super-app empowering university students to master attendance, calculate CGPA, scan notes, track assignments, and study smarter.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Aavaran</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="quick-actions.html">Quick Tools</a></li>
+                            <li><a href="contact.html">Campus Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>AI Tools &amp; Features</h3>
+                        <ul>
+                            <li><a href="fertilizer-calculator.html">Attendance Calculator</a></li>
+                            <li><a href="pesticide-calculator.html">CGPA / SGPA Simulator</a></li>
+                            <li><a href="#scanner-modal" class="scanner-trigger-btn">AI Note Scanner</a></li>
+                            <li><a href="crop-calendar.html">Exam Timetable</a></li>
+                            <li><a href="farm-expenses.html">Campus Expenses</a></li>
+                            <li><a href="service.html#summarizer">AI Note Summarizer</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-contact">
+                        <div class="footer-info-box">
+                            <h3>Campus Address</h3>
+                            <p>DG 1/2, Action Area I, Newtown, Kolkata, West Bengal 700156</p>
+                        </div>
+                        <div class="footer-info-box">
+                            <h3>Student Support</h3>
+                            <p>(+91) 987 654 3210</p>
+                            <p>support@aavaran.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-copyright-text">
+                            <p>All rights reserved AAVARAN&trade; 2026.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-md-end">
+                        <div class="footer-links-bottom" style="font-size:12.5px; color:#93C5FD;">
+                            <span>Manage College Life &amp; Learn Smarter Daily.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Main Footer End -->
+
+    <!-- Core Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/farm-expenses.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>

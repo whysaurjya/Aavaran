@@ -1,0 +1,267 @@
+/* ==========================================================================
+   PRAHARI - Dedicated Quick Actions Hub
+   Visuals: Exact Bento Grid cards matching Home Page + Search & Category Filters
+   ========================================================================== */
+
+.qa-page-wrapper {
+    background-color: #F8F3F0;
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(3, 75, 185, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.03) 0%, transparent 45%);
+    min-height: 100vh;
+    padding-bottom: 95px;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+}
+
+/* Hub Hero Banner */
+.qa-hero-banner {
+    background: linear-gradient(135deg, #092835 0%, #0F485F 100%);
+    padding: 36px 0 44px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.qa-hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: #F8F3F0;
+    border-radius: 24px 24px 0 0;
+}
+
+.qa-hero-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.qa-eyebrow {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #93C5FD;
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.qa-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.02em;
+}
+
+.qa-subtitle {
+    font-size: 14.5px;
+    color: #BFDBFE;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Search Bar Wrapper */
+.qa-search-container {
+    max-width: 680px;
+    margin: -16px auto 24px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 10;
+}
+
+.qa-search-box {
+    position: relative;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 72, 95, 0.08);
+    display: flex;
+    align-items: center;
+    padding: 4px 8px 4px 16px;
+    transition: all 0.25s ease;
+}
+
+.qa-search-box:focus-within {
+    border-color: #034bb9;
+    box-shadow: 0 12px 35px rgba(3, 75, 185, 0.18);
+}
+
+.qa-search-icon {
+    color: #64748B;
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+.qa-search-input {
+    width: 100%;
+    height: 44px;
+    border: none;
+    outline: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #0F172A;
+    background: transparent;
+}
+
+.qa-search-clear-btn {
+    background: #F1F5F9;
+    border: none;
+    color: #64748B;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.qa-search-clear-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Category Filter Pills */
+.qa-filter-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 0 16px 14px;
+    max-width: 680px;
+    margin: 0 auto 20px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.qa-filter-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.qa-filter-pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.qa-filter-pill:hover {
+    background: #F1F5F9;
+    color: #0F172A;
+}
+
+.qa-filter-pill.active {
+    background: #0F485F;
+    border-color: #0F485F;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(15, 72, 95, 0.2);
+}
+
+/* Hub Main Content Grid Container */
+.qa-content-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.qa-section {
+    margin-bottom: 30px;
+}
+
+.qa-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.qa-section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.01em;
+}
+
+.qa-section-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: #034bb9;
+    background: #EFF6FF;
+    padding: 2px 8px;
+    border-radius: 99px;
+    border: 1px solid #BFDBFE;
+}
+
+/* No Results State */
+.qa-no-results {
+    text-align: center;
+    padding: 40px 16px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1.5px dashed #CBD5E1;
+    display: none;
+}
+
+.qa-no-results.visible {
+    display: block;
+}
+
+.qa-no-results-icon {
+    font-size: 32px;
+    color: #94A3B8;
+    margin-bottom: 10px;
+}
+
+.qa-no-results-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+}
+
+.qa-no-results-text {
+    font-size: 13px;
+    color: #64748B;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .qa-hero-banner {
+        padding: 26px 0 36px;
+    }
+    .qa-title {
+        font-size: 23px;
+    }
+}
+
+/* Fixed Sticky Header for App Frame */
+.sh-top-header,
+.cc-top-header,
+.pc-top-header,
+.fe-top-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}

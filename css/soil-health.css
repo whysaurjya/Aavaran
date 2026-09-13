@@ -1,0 +1,563 @@
+/* ==========================================================================
+   PRAHARI - Soil Health & Nutrient Intelligence
+   Design System: Exact Mobile App Screen (100% Reference Aligned)
+   Visuals: Dark Forest Green Header + Score Gauge + 6-Grid Nutrients + Improvement Suggestions
+   ========================================================================== */
+
+:root {
+    --sh-bg: #F8F3F0;
+    --sh-header-bg: #092835;
+    --sh-header-bg-gradient: linear-gradient(135deg, #092835 0%, #0F485F 100%);
+    --sh-card-bg: #FFFFFF;
+    --sh-primary: #0F485F;
+    --sh-primary-light: #165A73;
+    --sh-emerald: #034bb9;
+    --sh-emerald-dark: #1E40AF;
+    --sh-emerald-light: #EFF6FF;
+    --sh-border: #E2E8F0;
+    --sh-text-main: #0F172A;
+    --sh-text-muted: #475569;
+    --sh-text-subtle: #64748B;
+    --sh-radius-phone: 36px;
+    --sh-radius-card: 28px;
+    --sh-radius-sm: 14px;
+    --sh-shadow-phone: 0 25px 60px -15px rgba(15, 72, 95, 0.18), 0 0 0 1px rgba(15, 72, 95, 0.05);
+}
+
+/* Page Outer Wrapper */
+.sh-page-wrapper {
+    background-color: var(--sh-bg);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(3, 75, 185, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(37, 99, 235, 0.04) 0%, transparent 45%);
+    min-height: 100vh;
+    padding: 30px 16px 90px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--sh-text-main);
+    box-sizing: border-box;
+}
+
+.sh-desktop-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sh-screen-eyebrow {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #034bb9;
+    margin-bottom: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mobile Screen Container Frame (Exact Reference) */
+.sh-phone-frame {
+    width: 100%;
+    max-width: 420px;
+    background: var(--sh-header-bg);
+    border-radius: var(--sh-radius-phone);
+    box-shadow: var(--sh-shadow-phone);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1.5px solid rgba(220, 228, 218, 0.85);
+}
+
+/* Dark Green Header Area */
+.sh-top-header {
+    background: var(--sh-header-bg-gradient);
+    padding: 20px 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.sh-header-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.sh-header-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #93C5FD;
+}
+
+.sh-screen-title {
+    font-size: 17.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.01em;
+    flex-grow: 1;
+}
+
+/* Main White Canvas with Rounded Top */
+.sh-form-canvas {
+    background: #FFFFFF;
+    border-radius: var(--sh-radius-card) var(--sh-radius-card) 0 0;
+    padding: 20px 18px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+/* Soil Health Overview Card (Top Hero - Refined with Prominent Right Circular Chart) */
+.sh-overview-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E6ECE8;
+    border-radius: 22px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(15, 72, 95, 0.05);
+}
+
+.sh-overview-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748B;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sh-overview-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.sh-score-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sh-score-num-row {
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.sh-score-val {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0F485F;
+    letter-spacing: -0.03em;
+}
+
+.sh-score-total {
+    font-size: 18px;
+    font-weight: 700;
+    color: #64748B;
+    margin-left: 3px;
+}
+
+.sh-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #034bb9;
+    background: #EFF6FF;
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid #BFDBFE;
+    width: fit-content;
+}
+
+.sh-status-pill i {
+    font-size: 12px;
+    color: #2563EB;
+}
+
+.sh-score-meta {
+    font-size: 11.5px;
+    color: #94A3B8;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* Prominent Right Circular Chart */
+.sh-gauge-col {
+    width: 86px;
+    height: 86px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sh-gauge-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.sh-gauge-bg {
+    fill: none;
+    stroke: #E8EEF5;
+    stroke-width: 7.5;
+}
+
+.sh-gauge-val {
+    fill: none;
+    stroke: #034bb9;
+    stroke-width: 7.5;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sh-gauge-center-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #034bb9;
+    font-size: 26px;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 6px rgba(3, 75, 185, 0.25));
+}
+
+/* Nutrient Status Section (6-Card Grid) */
+.sh-nutrients-section {
+    margin-bottom: 20px;
+}
+
+.sh-section-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.sh-nutrients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.sh-nutrient-card {
+    background: #FAFAFA;
+    border: 1px solid #E5E9E2;
+    border-radius: 14px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.sh-nutrient-card:hover {
+    background: #FFFFFF;
+    border-color: #034bb9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(3, 75, 185, 0.08);
+}
+
+.sh-nutrient-card.alert-low {
+    background: #FFFDFD;
+    border-color: #FEE2E2;
+}
+
+.sh-nutrient-card.alert-low .sh-nutrient-status {
+    color: #EF4444;
+}
+
+.sh-nutrient-symbol {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+}
+
+.sh-nutrient-status {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #034bb9;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.sh-nutrient-val {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+/* Improvement Suggestions Card */
+.sh-suggestions-card {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.sh-suggestions-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 12px;
+}
+
+.sh-suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sh-suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.sh-suggestion-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #034bb9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* Bottom Action CTA: Book Soil Test */
+.sh-bottom-action-wrapper {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sh-book-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #156538; /* Exact Forest Green CTA */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(21, 101, 56, 0.25);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.sh-book-btn:hover {
+    background: #0E4826;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(21, 101, 56, 0.35);
+    color: #FFFFFF;
+}
+
+/* Secondary Action Card: View Soil Test History */
+.sh-history-card-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FAFAFA;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F485F;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-decoration: none;
+}
+
+.sh-history-card-btn:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.sh-history-card-btn i {
+    font-size: 12px;
+    color: #64748B;
+}
+
+/* Modals */
+.sh-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 72, 95, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.sh-modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sh-modal-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 440px;
+    background: #FFFFFF;
+    border-radius: 28px 28px 0 0;
+    padding: 24px 20px 30px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.sh-modal-sheet.show {
+    transform: translate(-50%, 0);
+}
+
+.sh-modal-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #CBD5E1;
+    margin: 0 auto 16px;
+}
+
+.sh-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sh-modal-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+}
+
+.sh-modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Toast Alert */
+.sh-toast {
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+}
+
+.sh-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .sh-page-wrapper {
+        padding: 0 0 70px;
+        background-color: var(--sh-header-bg);
+    }
+    .sh-phone-frame {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+    .sh-screen-eyebrow {
+        display: none;
+    }
+}
+
+/* Fixed Sticky Header for App Frame */
+.sh-top-header,
+.cc-top-header,
+.pc-top-header,
+.fe-top-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}

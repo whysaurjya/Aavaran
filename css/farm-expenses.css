@@ -1,0 +1,786 @@
+/* ==========================================================================
+   PRAHARI - Farm Expense Tracker
+   Design System: Exact Mobile App Screen (100% Reference Aligned)
+   Visuals: Apple + Stripe + PRAHARI Nature Green + Clean Compact Cards
+   ========================================================================== */
+
+:root {
+    --fet-bg: #F8F3F0;
+    --fet-card-bg: #FFFFFF;
+    --fet-primary: #0F485F;
+    --fet-primary-light: #165A73;
+    --fet-emerald: #034bb9;
+    --fet-emerald-dark: #1E40AF;
+    --fet-emerald-light: #EFF6FF;
+    --fet-border: #E5E9E2;
+    --fet-text-main: #0F172A;
+    --fet-text-muted: #64748B;
+    --fet-text-subtle: #94A3B8;
+    
+    /* Category Palette matching reference */
+    --cat-fertilizer: #3B82F6; /* Blue */
+    --cat-pesticide: #F59E0B;  /* Orange/Amber */
+    --cat-labor: #034bb9;      /* Blue */
+    --cat-irrigation: #06B6D4; /* Cyan/Teal */
+    --cat-others: #8B5CF6;     /* Purple */
+    --cat-diesel: #EF4444;     /* Red/Coral */
+    
+    --fet-radius-phone: 36px;
+    --fet-radius-card: 22px;
+    --fet-radius-sm: 12px;
+    --fet-shadow-phone: 0 25px 60px -15px rgba(15, 72, 95, 0.18), 0 0 0 1px rgba(15, 72, 95, 0.05);
+    --fet-shadow-card: 0 4px 18px -2px rgba(15, 72, 95, 0.04);
+}
+
+/* Page Outer Section */
+.fet-page-wrapper {
+    background-color: var(--fet-bg);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(3, 75, 185, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(37, 99, 235, 0.04) 0%, transparent 45%);
+    min-height: 100vh;
+    padding: 30px 16px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--fet-text-main);
+    box-sizing: border-box;
+}
+
+/* Desktop Presentation Layout */
+.fet-desktop-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fet-screen-eyebrow {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #034bb9;
+    margin-bottom: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mobile Screen Container (Matches Reference Device Frame) */
+.fet-phone-frame {
+    width: 100%;
+    max-width: 420px;
+    background: #FFFFFF;
+    border-radius: var(--fet-radius-phone);
+    box-shadow: var(--fet-shadow-phone);
+    padding: 24px 20px 24px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1.5px solid rgba(220, 228, 218, 0.85);
+}
+
+/* Screen Top Header */
+.fet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.fet-back-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.fet-back-btn:hover {
+    background: #F1F5F9;
+    color: #034bb9;
+}
+
+.fet-screen-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+    letter-spacing: -0.02em;
+}
+
+.fet-header-spacer {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+/* Month Dropdown Card */
+.fet-month-card {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.fet-month-selector-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F8FAFC;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fet-month-selector-btn:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.fet-month-selector-btn i {
+    font-size: 12px;
+    color: #64748B;
+    transition: transform 0.2s ease;
+}
+
+.fet-month-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    padding: 6px;
+    display: none;
+}
+
+.fet-month-dropdown-menu.show {
+    display: block;
+}
+
+.fet-month-option {
+    padding: 8px 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.fet-month-option:hover,
+.fet-month-option.active {
+    background: #EFF6FF;
+    color: #034bb9;
+}
+
+/* Expense Summary Card */
+.fet-summary-card {
+    background: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.fet-summary-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fet-text-muted);
+    margin-bottom: 4px;
+}
+
+.fet-summary-amount-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.fet-currency-symbol {
+    font-size: 22px;
+    font-weight: 800;
+    color: #D97706; /* Golden amber rupee symbol */
+}
+
+.fet-summary-total {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+/* Donut Chart & Legend Row */
+.fet-chart-legend-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Donut Chart Visual */
+.fet-donut-container {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fet-donut-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.fet-donut-center-circle {
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.fet-center-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--fet-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.fet-center-val {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+/* Legend List (Beside Donut) */
+.fet-legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fet-legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.fet-legend-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fet-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.fet-legend-name {
+    font-weight: 600;
+    color: #334155;
+}
+
+.fet-legend-pct {
+    font-weight: 700;
+    color: #0F172A;
+    font-size: 12.5px;
+}
+
+/* Recent Entries Section */
+.fet-recent-section {
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.fet-recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.fet-recent-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.fet-entries-count {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--fet-text-muted);
+}
+
+/* Recent Expense Items List */
+.fet-entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fet-entry-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: var(--fet-radius-sm);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.fet-entry-card:hover {
+    background: #F8FAFC;
+    border-color: #E2E8F0;
+    transform: translateY(-1px);
+}
+
+.fet-entry-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.fet-entry-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #475569;
+    flex-shrink: 0;
+}
+
+.fet-entry-icon-box.icon-fertilizer { color: var(--cat-fertilizer); background: #EFF6FF; border-color: #DBEAFE; }
+.fet-entry-icon-box.icon-pesticide { color: var(--cat-pesticide); background: #FFFBEB; border-color: #FEF3C7; }
+.fet-entry-icon-box.icon-labor { color: var(--cat-labor); background: #EFF6FF; border-color: #BFDBFE; }
+.fet-entry-icon-box.icon-irrigation { color: var(--cat-irrigation); background: #ECFEFF; border-color: #CFFAFE; }
+.fet-entry-icon-box.icon-diesel { color: var(--cat-diesel); background: #FEF2F2; border-color: #FEE2E2; }
+.fet-entry-icon-box.icon-others { color: var(--cat-others); background: #F5F3FF; border-color: #EDE9FE; }
+
+.fet-entry-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.fet-entry-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fet-entry-right-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.fet-entry-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fet-entry-amount {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.2;
+}
+
+.fet-entry-date {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--fet-text-subtle);
+    margin-top: 2px;
+}
+
+.fet-entry-delete-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    border: none;
+    background: #F8FAFC;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.75;
+}
+
+.fet-entry-card:hover .fet-entry-delete-btn,
+.fet-entry-delete-btn:hover {
+    opacity: 1;
+    background: #FEF2F2;
+    color: #EF4444;
+    transform: scale(1.08);
+}
+
+/* Toast Alert */
+.fet-toast {
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+}
+
+.fet-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.fet-toast-undo {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #93C5FD;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.fet-toast-undo:hover {
+    background: #034bb9;
+    color: #FFFFFF;
+}
+
+/* Bottom Action Button */
+.fet-bottom-action-wrapper {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.fet-add-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #034bb9;
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--fet-radius-sm);
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(3, 75, 185, 0.25);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.fet-add-btn:hover {
+    background: #02388c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(3, 75, 185, 0.35);
+    color: #FFFFFF;
+}
+
+/* Add Expense Modal */
+.fet-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 72, 95, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.fet-modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fet-modal-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 440px;
+    background: #FFFFFF;
+    border-radius: 28px 28px 0 0;
+    padding: 24px 22px 30px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.fet-modal-sheet.show {
+    transform: translate(-50%, 0);
+}
+
+.fet-modal-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #CBD5E1;
+    margin: 0 auto 16px;
+}
+
+.fet-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.fet-modal-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+}
+
+.fet-modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Category Quick Selector Pills */
+.fet-category-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.fet-cat-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    justify-content: center;
+}
+
+.fet-cat-pill:hover {
+    background: #F1F5F9;
+}
+
+.fet-cat-pill.active {
+    background: #EFF6FF;
+    border-color: #034bb9;
+    color: #034bb9;
+}
+
+.fet-input-group {
+    margin-bottom: 14px;
+}
+
+.fet-input-label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.fet-text-input {
+    width: 100%;
+    height: 44px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1.5px solid #E2E8F0;
+    background: #FAFAFA;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.fet-text-input:focus {
+    border-color: #034bb9;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(3, 75, 185, 0.15);
+}
+
+/* Responsive Handling */
+@media (max-width: 480px) {
+    .fet-page-wrapper {
+        padding: 0 0 70px;
+        background-color: #FFFFFF;
+    }
+    .fet-phone-frame {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        padding: 20px 16px 20px;
+    }
+    .fet-screen-eyebrow {
+        display: none;
+    }
+    .fet-entry-delete-btn {
+        opacity: 0.9;
+    }
+}
+
+/* Month Dropdown Enhancements */
+.fet-month-options-list {
+    max-height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.fet-month-divider {
+    height: 1px;
+    background: #E2E8F0;
+    margin: 6px 0;
+}
+
+.fet-add-month-trigger {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #034bb9;
+    background: #EFF6FF;
+    border: 1px dashed #BFDBFE;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+}
+
+.fet-add-month-trigger:hover {
+    background: #DBEAFE;
+    color: #1E40AF;
+    border-style: solid;
+}
+
+/* Quick Month Suggestion Chips */
+.fet-month-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.fet-month-chip {
+    padding: 5px 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #475569;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.fet-month-chip:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+}
+
+/* Fixed Sticky Header for App Frame */
+.sh-top-header,
+.cc-top-header,
+.pc-top-header,
+.fe-top-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}

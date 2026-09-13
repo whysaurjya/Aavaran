@@ -1,0 +1,506 @@
+/* ==========================================================================
+   PRAHARI - Pesticide & Fungicide Dosage Calculator
+   Design System: Exact Mobile App Screen (100% Reference Aligned)
+   Visuals: Dark Forest Green Header + Clean White Form Canvas + Highlighted Results
+   ========================================================================== */
+
+:root {
+    --pc-bg: #F8F3F0;
+    --pc-header-bg: #092835;
+    --pc-header-bg-gradient: linear-gradient(135deg, #092835 0%, #0F485F 100%);
+    --pc-card-bg: #FFFFFF;
+    --pc-primary: #0F485F;
+    --pc-primary-light: #165A73;
+    --pc-emerald: #034bb9;
+    --pc-emerald-dark: #1E40AF;
+    --pc-emerald-light: #EFF6FF;
+    --pc-emerald-border: #BFDBFE;
+    --pc-border: #E2E8F0;
+    --pc-input-bg: #FAFAFA;
+    --pc-input-focus: #FFFFFF;
+    --pc-text-main: #0F172A;
+    --pc-text-muted: #475569;
+    --pc-text-subtle: #64748B;
+    --pc-radius-phone: 36px;
+    --pc-radius-card: 28px;
+    --pc-radius-input: 12px;
+    --pc-radius-sm: 10px;
+    --pc-shadow-phone: 0 25px 60px -15px rgba(15, 72, 95, 0.18), 0 0 0 1px rgba(15, 72, 95, 0.05);
+    --pc-shadow-result: 0 4px 20px -2px rgba(3, 75, 185, 0.12);
+}
+
+/* Page Outer Wrapper */
+.pc-page-wrapper {
+    background-color: var(--pc-bg);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(3, 75, 185, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(37, 99, 235, 0.04) 0%, transparent 45%);
+    min-height: 100vh;
+    padding: 30px 16px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--pc-text-main);
+    box-sizing: border-box;
+}
+
+.pc-desktop-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pc-screen-eyebrow {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #034bb9;
+    margin-bottom: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mobile Screen Container Frame (Exact Reference) */
+.pc-phone-frame {
+    width: 100%;
+    max-width: 420px;
+    background: var(--pc-header-bg);
+    border-radius: var(--pc-radius-phone);
+    box-shadow: var(--pc-shadow-phone);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1.5px solid rgba(220, 228, 218, 0.85);
+}
+
+/* Dark Green Header Area */
+.pc-top-header {
+    background: var(--pc-header-bg-gradient);
+    padding: 20px 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.pc-header-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pc-header-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #93C5FD;
+}
+
+.pc-screen-title {
+    font-size: 17.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.01em;
+    flex-grow: 1;
+}
+
+/* Main Form White Canvas with Rounded Top */
+.pc-form-canvas {
+    background: #FFFFFF;
+    border-radius: var(--pc-radius-card) var(--pc-radius-card) 0 0;
+    padding: 24px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+/* Form Group */
+.pc-form-group {
+    margin-bottom: 16px;
+}
+
+.pc-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--pc-text-main);
+    margin-bottom: 6px;
+}
+
+.pc-select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.pc-select, .pc-input {
+    width: 100%;
+    height: 46px;
+    padding: 10px 14px;
+    border-radius: var(--pc-radius-input);
+    border: 1.5px solid var(--pc-border);
+    background-color: var(--pc-input-bg);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pc-text-main);
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.pc-select-wrapper i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748B;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.pc-select:focus, .pc-input:focus {
+    border-color: #034bb9;
+    background-color: var(--pc-input-focus);
+    box-shadow: 0 0 0 3px rgba(3, 75, 185, 0.15);
+}
+
+.pc-input.readonly {
+    background-color: #F8FAFC;
+    color: #334155;
+    cursor: default;
+}
+
+/* Two-Column Split Unit Row (Water Volume & Area) */
+.pc-split-input-row {
+    display: grid;
+    grid-template-columns: 1fr 135px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Results Card (Highlighted Blue) */
+.pc-result-card {
+    background: #EFF6FF;
+    border: 1.5px solid var(--pc-emerald-border);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    margin: 10px 0 20px;
+    box-shadow: var(--pc-shadow-result);
+    transition: all 0.25s ease;
+}
+
+.pc-result-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #034bb9;
+    margin-bottom: 6px;
+}
+
+.pc-result-qty-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.pc-result-qty {
+    font-size: 32px;
+    font-weight: 800;
+    color: #092835;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.pc-result-unit {
+    font-size: 20px;
+    font-weight: 700;
+    color: #034bb9;
+}
+
+.pc-result-product-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* Safety Reminders Section */
+.pc-safety-card {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 22px;
+}
+
+.pc-safety-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--pc-text-main);
+    margin-bottom: 12px;
+}
+
+.pc-safety-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pc-safety-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.pc-safety-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #F8FAFC;
+    color: #0F485F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* Bottom Action CTA */
+.pc-bottom-action-wrapper {
+    margin-top: auto;
+}
+
+.pc-save-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #156538; /* Exact forest green from reference */
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--pc-radius-input);
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(21, 101, 56, 0.25);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pc-save-btn:hover {
+    background: #0E4826;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(21, 101, 56, 0.35);
+    color: #FFFFFF;
+}
+
+/* History & Info Modals */
+.pc-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 72, 95, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.pc-modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pc-modal-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 440px;
+    background: #FFFFFF;
+    border-radius: 28px 28px 0 0;
+    padding: 24px 22px 30px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.pc-modal-sheet.show {
+    transform: translate(-50%, 0);
+}
+
+.pc-modal-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #CBD5E1;
+    margin: 0 auto 16px;
+}
+
+.pc-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pc-modal-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+}
+
+.pc-modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* History Item Card */
+.pc-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pc-history-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.pc-history-card:hover {
+    background: #FFFFFF;
+    border-color: #034bb9;
+}
+
+.pc-history-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F485F;
+}
+
+.pc-history-meta {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+.pc-history-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.pc-history-val {
+    font-size: 15px;
+    font-weight: 800;
+    color: #034bb9;
+}
+
+/* Toast Alert */
+.pc-toast {
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+}
+
+.pc-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .pc-page-wrapper {
+        padding: 0 0 70px;
+        background-color: var(--pc-header-bg);
+    }
+    .pc-phone-frame {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+    .pc-screen-eyebrow {
+        display: none;
+    }
+}
+
+/* Fixed Sticky Header for App Frame */
+.sh-top-header,
+.cc-top-header,
+.pc-top-header,
+.fe-top-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}

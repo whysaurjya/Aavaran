@@ -1,0 +1,691 @@
+/* ==========================================================================
+   PRAHARI - Crop Calendar & Growth Stage Management
+   Design System: Exact Mobile App Screen (100% Reference Aligned)
+   Visuals: Dark Forest Green Header + Crop Hero + Growth Stage Timeline + Task Checklist
+   ========================================================================== */
+
+:root {
+    --cc-bg: #F8F3F0;
+    --cc-header-bg: #092835;
+    --cc-header-bg-gradient: linear-gradient(135deg, #092835 0%, #0F485F 100%);
+    --cc-card-bg: #FFFFFF;
+    --cc-primary: #0F485F;
+    --cc-primary-light: #165A73;
+    --cc-emerald: #034bb9;
+    --cc-emerald-dark: #1E40AF;
+    --cc-emerald-light: #EFF6FF;
+    --cc-emerald-border: #BFDBFE;
+    --cc-border: #E2E8F0;
+    --cc-text-main: #0F172A;
+    --cc-text-muted: #475569;
+    --cc-text-subtle: #64748B;
+    --cc-radius-phone: 36px;
+    --cc-radius-card: 28px;
+    --cc-radius-sm: 14px;
+    --cc-shadow-phone: 0 25px 60px -15px rgba(15, 72, 95, 0.18), 0 0 0 1px rgba(15, 72, 95, 0.05);
+}
+
+/* Page Outer Section */
+.cc-page-wrapper {
+    background-color: var(--cc-bg);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(3, 75, 185, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(37, 99, 235, 0.04) 0%, transparent 45%);
+    min-height: 100vh;
+    padding: 30px 16px 90px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--cc-text-main);
+    box-sizing: border-box;
+}
+
+.cc-desktop-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cc-screen-eyebrow {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #034bb9;
+    margin-bottom: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mobile Screen Container (Matches Reference Device Frame) */
+.cc-phone-frame {
+    width: 100%;
+    max-width: 420px;
+    background: var(--cc-header-bg);
+    border-radius: var(--cc-radius-phone);
+    box-shadow: var(--cc-shadow-phone);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1.5px solid rgba(220, 228, 218, 0.85);
+}
+
+/* Dark Green Header */
+.cc-top-header {
+    background: var(--cc-header-bg-gradient);
+    padding: 20px 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.cc-header-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.cc-header-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #93C5FD;
+}
+
+.cc-screen-title {
+    font-size: 17.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.01em;
+    flex-grow: 1;
+}
+
+/* Main White Canvas with Rounded Top */
+.cc-form-canvas {
+    background: #FFFFFF;
+    border-radius: var(--cc-radius-card) var(--cc-radius-card) 0 0;
+    padding: 22px 18px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+/* Crop Information Card (Hero Top) */
+.cc-crop-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 4px;
+}
+
+.cc-crop-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cc-crop-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+}
+
+.cc-crop-variety {
+    font-weight: 600;
+    color: #334155;
+}
+
+.cc-sowing-date {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748B;
+    margin-top: 4px;
+}
+
+.cc-crop-image-box {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cc-crop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(220, 38, 38, 0.25));
+}
+
+/* Growth Stage Progress Timeline (Exact Horizontal Track) */
+.cc-timeline-wrapper {
+    margin-bottom: 24px;
+    position: relative;
+    padding: 0 4px;
+}
+
+.cc-timeline-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.cc-timeline-line {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: #E2E8F0;
+    z-index: 1;
+}
+
+.cc-timeline-line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Reaches active stage */
+    height: 100%;
+    background: #0F485F;
+    transition: width 0.4s ease;
+}
+
+.cc-timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    flex: 1;
+}
+
+.cc-step-node {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #64748B;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* Completed Steps */
+.cc-timeline-step.completed .cc-step-node {
+    background: #EFF6FF;
+    border-color: #1E40AF;
+    color: #1E40AF;
+}
+
+/* Active Highlighted Step (Flowering - Larger Dark Green) */
+.cc-timeline-step.active .cc-step-node {
+    width: 44px;
+    height: 44px;
+    background: #0F485F;
+    border: 3px solid #034bb9;
+    color: #FFFFFF;
+    font-size: 16px;
+    box-shadow: 0 4px 14px rgba(15, 72, 95, 0.35);
+    margin-top: -5px;
+}
+
+.cc-step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+    margin-top: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.cc-timeline-step.active .cc-step-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F485F;
+    position: relative;
+}
+
+.cc-timeline-step.active .cc-step-label::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: #0F485F;
+    border-radius: 2px;
+    margin-top: 3px;
+}
+
+/* Today's Tasks Section */
+.cc-tasks-section {
+    margin-bottom: 16px;
+}
+
+.cc-section-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cc-tasks-card {
+    background: #F8FAFC;
+    border: 1px solid #F1F5F9;
+    border-radius: var(--cc-radius-sm);
+    padding: 14px 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cc-task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1E293B;
+    transition: all 0.15s ease;
+}
+
+.cc-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 1.5px solid #CBD5E1;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.cc-task-item.checked .cc-checkbox {
+    background: #0F485F;
+    border-color: #0F485F;
+}
+
+.cc-task-item.checked .cc-task-text {
+    color: #334155;
+    font-weight: 600;
+}
+
+/* View Detailed Guide Button Card */
+.cc-guide-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-radius: var(--cc-radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.cc-guide-card:hover {
+    background: #DBEAFE;
+    border-color: #93C5FD;
+    transform: translateY(-1px);
+}
+
+.cc-guide-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cc-guide-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #DBEAFE;
+    color: #034bb9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.cc-guide-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.cc-guide-arrow {
+    font-size: 12px;
+    color: #034bb9;
+}
+
+/* Upcoming Activities Section */
+.cc-upcoming-section {
+    margin-bottom: 12px;
+}
+
+.cc-upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cc-upcoming-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: var(--cc-radius-sm);
+    padding: 10px 12px;
+    transition: all 0.2s ease;
+}
+
+.cc-upcoming-item:hover {
+    background: #F8FAFC;
+    border-color: #E2E8F0;
+}
+
+.cc-upcoming-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cc-upcoming-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.icon-spray { background: #FEF2F2; color: #EF4444; border: 1px solid #FEE2E2; }
+.icon-fertilizer { background: #F5F3FF; color: #8B5CF6; border: 1px solid #EDE9FE; }
+.icon-monitoring { background: #FFFBEB; color: #F59E0B; border: 1px solid #FEF3C7; }
+.icon-irrigation { background: #ECFEFF; color: #06B6D4; border: 1px solid #CFFAFE; }
+
+.cc-upcoming-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cc-upcoming-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.25;
+}
+
+.cc-upcoming-sub {
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+.cc-upcoming-day-badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+/* Modal Bottom Sheet */
+.cc-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 72, 95, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.cc-modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cc-modal-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 440px;
+    background: #FFFFFF;
+    border-radius: 28px 28px 0 0;
+    padding: 24px 20px 30px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.cc-modal-sheet.show {
+    transform: translate(-50%, 0);
+}
+
+.cc-modal-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #CBD5E1;
+    margin: 0 auto 16px;
+}
+
+.cc-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.cc-modal-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+}
+
+.cc-modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Toast */
+.cc-toast {
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+}
+
+.cc-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .cc-page-wrapper {
+        padding: 0 0 70px;
+        background-color: var(--cc-header-bg);
+    }
+    .cc-phone-frame {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+    .cc-screen-eyebrow {
+        display: none;
+    }
+}
+
+/* Switch Crop Button */
+.cc-switch-crop-btn {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    color: #034bb9;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 6px;
+    transition: all 0.15s ease;
+}
+
+.cc-switch-crop-btn:hover {
+    background: #DBEAFE;
+    color: #1E40AF;
+    transform: scale(1.05);
+}
+
+/* Crop Grid in Modal */
+.cc-crop-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.cc-crop-picker-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.cc-crop-picker-card:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.cc-crop-picker-card.active {
+    background: #EFF6FF;
+    border-color: #034bb9;
+    box-shadow: 0 0 0 2px rgba(3, 75, 185, 0.2);
+}
+
+.cc-crop-picker-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.cc-crop-picker-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cc-crop-picker-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.cc-crop-picker-variety {
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+/* Fixed Sticky Header for App Frame */
+.sh-top-header,
+.cc-top-header,
+.pc-top-header,
+.fe-top-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found - AAVARAN | Your AI-Powered Student Ecosystem">
+    <meta name="keywords" content="AAVARAN, page not found, 404, student tools">
+    <meta name="author" content="Aavaran Student Ecosystem">
+    <!-- Page Title -->
+    <title>Page Not Found - AAVARAN | Student Ecosystem</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Preloader Start -->
+    <div class="preloader" id="site-preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="images/favicon.svg" alt="Aavaran Loader" width="40" height="40"></div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            var p = document.getElementById('site-preloader') || document.querySelector('.preloader');
+            if (!p) return;
+            var dismissed = false;
+            function hidePreloader() {
+                if (dismissed || !p) return;
+                dismissed = true;
+                p.style.transition = 'opacity 0.4s ease, visibility 0.4s ease';
+                p.style.opacity = '0';
+                p.style.pointerEvents = 'none';
+                setTimeout(function() {
+                    if (p) p.style.display = 'none';
+                }, 400);
+            }
+            window.addEventListener('load', hidePreloader);
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(hidePreloader, 300);
+            });
+            setTimeout(hidePreloader, 900);
+        })();
+    </script>
+    <!-- Preloader End -->
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="header-inner-row">
+                        <!-- Left: Hamburger Menu Button -->
+                        <div class="header-action-col header-action-col--left">
+                            <button class="header-btn" id="drawer-open-btn" type="button"
+                                aria-label="Open Navigation Menu" aria-controls="nav-drawer" aria-expanded="false">
+                                <span class="hamburger-icon">
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <!-- Center: AAVARAN Logo -->
+                        <div class="header-brand-col">
+                            <a class="navbar-brand header-logo" href="index.html" aria-label="Aavaran Home">
+                                <img src="images/logo.svg" height="46" width="165" alt="Aavaran Logo">
+                            </a>
+                        </div>
+
+                        <!-- Right: Profile Icon Button -->
+                        <div class="header-action-col header-action-col--right">
+                            <button class="header-btn" id="profile-open-btn" type="button"
+                                aria-label="User Account Menu" aria-controls="account-sheet" aria-expanded="false">
+                                <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                <span class="profile-badge-dot" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Navigation Drawer Start -->
+    <div class="nav-drawer-backdrop" id="nav-drawer-backdrop"></div>
+    <aside class="nav-drawer" id="nav-drawer" aria-label="Site Navigation" aria-hidden="true">
+        <div class="nav-drawer__header">
+            <div class="nav-drawer__brand">
+                <img src="images/logo.svg" height="34" width="120" alt="Aavaran Logo">
+                <span class="nav-drawer__badge"><i class="fa-solid fa-graduation-cap"></i> Student AI</span>
+            </div>
+            <button class="nav-drawer__close-btn" id="nav-drawer-close" type="button"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="nav-drawer__body">
+            <ul class="nav-drawer__menu">
+                <li>
+                    <a href="index.html" class="nav-drawer__link" data-nav="index.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="nav-drawer__label">HOME</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-drawer__link" data-nav="about.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="nav-drawer__label">ABOUT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="service.html" class="nav-drawer__link" data-nav="service.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <span class="nav-drawer__label">ACADEMIC SUITE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="quick-actions.html" class="nav-drawer__link" data-nav="quick-actions.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-toolbox"></i></span>
+                        <span class="nav-drawer__label">QUICK TOOLS</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fertilizer-calculator.html" class="nav-drawer__link" data-nav="fertilizer-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-user-check"></i></span>
+                        <span class="nav-drawer__label">ATTENDANCE CALC</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pesticide-calculator.html" class="nav-drawer__link" data-nav="pesticide-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-award"></i></span>
+                        <span class="nav-drawer__label">CGPA / SGPA CALC</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-drawer__link" data-nav="contact.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-headset"></i></span>
+                        <span class="nav-drawer__label">CAMPUS SUPPORT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- Navigation Drawer End -->
+
+    <!-- Account Menu Sheet / Dropdown Start -->
+    <div class="account-sheet-backdrop" id="account-sheet-backdrop"></div>
+    <div class="account-sheet" id="account-sheet" aria-label="User Account Menu" aria-hidden="true">
+        <div class="account-sheet__header">
+            <div class="account-user-card">
+                <div class="account-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                        alt="Student Avatar" class="account-avatar-img">
+                    <span class="account-online-dot"></span>
+                </div>
+                <div class="account-user-info">
+                    <span class="account-user-name">Aarav Sharma</span>
+                    <span class="account-user-role"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE &bull; Sem 5</span>
+                </div>
+            </div>
+            <button class="account-sheet__close-btn" id="account-sheet-close" type="button"
+                aria-label="Close account menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="account-sheet__body">
+            <div class="account-sheet__stats">
+                <div class="account-stat-item"><span class="stat-number">8.92</span><span
+                        class="stat-label">CGPA</span></div>
+                <div class="account-stat-item"><span class="stat-number">86%</span><span
+                        class="stat-label">Attendance</span></div>
+                <div class="account-stat-item"><span class="stat-number">18</span><span
+                        class="stat-label">Credits</span></div>
+            </div>
+
+            <div class="account-sheet__nav-group">
+                <div class="account-group-title">Academic Activity</div>
+                <ul class="account-sheet__list">
+                    <li>
+                        <a href="about.html#profile" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-id-card"></i></span>
+                            <span class="account-item__text">Student Profile</span>
+                            <span class="account-item__tag">Verified</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quick-actions.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-bookmark"></i></span>
+                            <span class="account-item__text">Saved Lecture Notes</span>
+                            <span class="account-item__badge">8</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="crop-calendar.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-calendar-check"></i></span>
+                            <span class="account-item__text">Exam Schedule</span>
+                            <span class="account-item__badge">5 Left</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="account-sheet__nav-group">
+                <div class="account-group-title">Preferences &amp; Settings</div>
+                <ul class="account-sheet__list">
+                    <li class="account-sheet__lang-item">
+                        <button type="button" class="account-sheet__item account-sheet__item--btn"
+                            id="open-language-modal-btn" aria-label="Select Language">
+                            <span class="account-item__icon"><i class="fa-solid fa-globe"></i></span>
+                            <div class="account-item__text-wrap">
+                                <span class="account-item__text">Language / भाषा</span>
+                                <small class="account-item__subtext" id="current-lang-display">English (Default)</small>
+                            </div>
+                            <span class="account-item__badge-pill" id="current-lang-badge">EN</span>
+                            <i class="fa-solid fa-chevron-right sheet-arrow"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <a href="quick-actions.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-gear"></i></span>
+                            <span class="account-item__text">Quick Actions Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-circle-question"></i></span>
+                            <span class="account-item__text">Help &amp; Campus Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="account-sheet__footer">
+            <button type="button" class="account-sheet__logout-btn" id="logout-demo-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+            </button>
+        </div>
+    </div>
+    <!-- Account Menu Sheet / Dropdown End -->
+
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-2" data-cursor="-opaque">Page Not Found</h1>
+                        <nav class="wow fadeInUp">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">404 Error</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Error Section Start -->
+    <div class="error-page">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center">
+                    <div class="error-page-image wow fadeInUp" data-wow-delay="0.25s">
+                        <img src="images/404-error-img.png" alt="404 Page Not Found" class="img-fluid" style="max-height: 380px;">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="error-page-content">
+                        <div class="error-page-content-heading">
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Oops!</span> Lecture Not Found</h2>
+                        </div>
+                        <div class="error-page-content-body">
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">The page or academic resource you are looking for does not exist or has been moved. You can head back to the student hub or explore our academic tools below.</p>
+                            <a class="btn-default wow fadeInUp" data-wow-delay="0.5s" href="index.html">Back To Student Hub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Error Section End -->
+
+    <!-- Floating Bottom Navigation Start -->
+    <nav class="floating-bottom-nav" aria-label="Primary navigation">
+        <div class="floating-bottom-nav__bar">
+            <a href="index.html" class="floating-bottom-nav__item" data-nav="index.html" aria-label="Home">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+            </a>
+            <a href="fertilizer-calculator.html" class="floating-bottom-nav__item" data-nav="fertilizer-calculator.html" aria-label="Attendance">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span>
+            </a>
+            <a href="index.html#scanner-modal" class="floating-bottom-nav__item floating-bottom-nav__item--center" aria-label="Scan">
+                <span class="floating-bottom-nav__fab">
+                    <i class="fa-solid fa-camera" aria-hidden="true"></i>
+                </span>
+            </a>
+            <a href="pesticide-calculator.html" class="floating-bottom-nav__item" data-nav="pesticide-calculator.html" aria-label="CGPA Calculator">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+            </a>
+            <a href="farm-expenses.html" class="floating-bottom-nav__item" data-nav="farm-expenses.html" aria-label="Campus Expenses">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-wallet" aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </nav>
+    <!-- Floating Bottom Navigation End -->
+
+    <!-- Main Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="about-footer">
+                        <div class="footer-logo">
+                            <img src="images/footer-logo.svg" height="46" width="165" alt="Aavaran Logo">
+                        </div>
+                        <div class="about-footer-content">
+                            <p>AI-powered student ecosystem platform empowering college students to master academics, maintain attendance, conquer exams, and thrive daily.</p>
+                        </div>
+                        <div class="footer-social-links">
+                            <ul>
+                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="https://x.com/" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Aavaran</a></li>
+                            <li><a href="service.html">Academic Suite</a></li>
+                            <li><a href="quick-actions.html">Quick Actions</a></li>
+                            <li><a href="contact.html">Campus Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>Academic Suite</h3>
+                        <ul>
+                            <li><a href="fertilizer-calculator.html">Attendance Forecaster</a></li>
+                            <li><a href="pesticide-calculator.html">CGPA / SGPA Simulator</a></li>
+                            <li><a href="index.html#scanner-modal">AI Note Scanner</a></li>
+                            <li><a href="crop-calendar.html">Exam Countdown</a></li>
+                            <li><a href="soil-health.html">Assignment Tracker</a></li>
+                            <li><a href="farm-expenses.html">Campus Expenses</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-contact">
+                        <div class="footer-info-box">
+                            <h3>Campus Headquarters</h3>
+                            <p>Knowledge Park III, Greater Noida, Delhi NCR 201306</p>
+                        </div>
+                        <div class="footer-info-box">
+                            <h3>Student Support</h3>
+                            <p>(+91) 987 654 3210</p>
+                            <p>support@aavaran.edu.in</p>
+                        </div>
+                        <div class="working-hour-box" style="margin-top:10px;">
+                            <span style="font-size:12px; font-weight:700; color:#93C5FD; text-transform:uppercase;">Availability</span>
+                            <p style="margin:2px 0 0; font-size:12.5px; color:#FFFFFF;">Mon-Sun &bull; 24/7 AI Student Assistant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-copyright-text">
+                            <p>All rights reserved AAVARAN&trade; 2026.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-md-end">
+                        <div class="footer-links-bottom" style="font-size:12.5px; color:#93C5FD;">
+                            <span>Your AI-Powered Student Ecosystem</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Main Footer End -->
+
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Isotop js file -->
+    <script src="js/isotope.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/i18n.js"></script>
+    <script src="js/function.js"></script>
+</body>
+
+</html>

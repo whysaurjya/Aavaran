@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aavaran Assignment Tracker - Manage homework deadlines, lab submissions, project milestones, and priority triage for all your college courses.">
+    <meta name="keywords"
+        content="assignment tracker, homework tracker, college deadlines, lab submissions, student task manager, Aavaran">
+    <meta name="author" content="Aavaran Ecosystem">
+    <!-- Page Title -->
+    <title>Assignment Tracker - Aavaran</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="images/favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- Dedicated Soil Health Css -->
+    <link href="css/soil-health.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="header-inner-row">
+                        <div class="header-action-col header-action-col--left">
+                            <button class="header-btn" id="drawer-open-btn" type="button"
+                                aria-label="Open Navigation Menu" aria-controls="nav-drawer" aria-expanded="false">
+                                <span class="hamburger-icon">
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="header-brand-col">
+                            <a class="navbar-brand header-logo" href="index.html" aria-label="Aavaran Home">
+                                <img src="images/logo.svg" height="46" width="165" alt="Aavaran Logo">
+                            </a>
+                        </div>
+
+                        <div class="header-action-col header-action-col--right">
+                            <button class="header-btn" id="profile-open-btn" type="button"
+                                aria-label="Student Account Menu" aria-controls="account-sheet" aria-expanded="false">
+                                <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                <span class="profile-badge-dot" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Navigation Drawer Start -->
+    <div class="nav-drawer-backdrop" id="nav-drawer-backdrop"></div>
+    <aside class="nav-drawer" id="nav-drawer" aria-label="Site Navigation" aria-hidden="true">
+        <div class="nav-drawer__header">
+            <div class="nav-drawer__brand">
+                <img src="images/logo.svg" height="32" width="120" alt="Aavaran Logo">
+                <span class="nav-drawer__badge"><i class="fa-solid fa-graduation-cap"></i> Student AI</span>
+            </div>
+            <button class="nav-drawer__close-btn" id="nav-drawer-close" type="button"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="nav-drawer__body">
+            <ul class="nav-drawer__menu">
+                <li>
+                    <a href="index.html" class="nav-drawer__link" data-nav="index.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="nav-drawer__label">HOME</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-drawer__link" data-nav="about.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="nav-drawer__label">ABOUT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#features" class="nav-drawer__link" data-nav="#features">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <span class="nav-drawer__label">FEATURES</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="quick-actions.html" class="nav-drawer__link" data-nav="quick-actions.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-toolbox"></i></span>
+                        <span class="nav-drawer__label">QUICK TOOLS</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fertilizer-calculator.html" class="nav-drawer__link" data-nav="fertilizer-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-calendar-check"></i></span>
+                        <span class="nav-drawer__label">ATTENDANCE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pesticide-calculator.html" class="nav-drawer__link" data-nav="pesticide-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span class="nav-drawer__label">CGPA / SGPA</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="crop-calendar.html" class="nav-drawer__link" data-nav="crop-calendar.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-stopwatch"></i></span>
+                        <span class="nav-drawer__label">EXAM TIMETABLE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="soil-health.html" class="nav-drawer__link active" data-nav="soil-health.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-list-check"></i></span>
+                        <span class="nav-drawer__label">ASSIGNMENTS</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-drawer__link" data-nav="contact.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-headset"></i></span>
+                        <span class="nav-drawer__label">CONTACT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- Navigation Drawer End -->
+
+    <!-- Account Menu Sheet / Dropdown Start -->
+    <div class="account-sheet-backdrop" id="account-sheet-backdrop"></div>
+    <div class="account-sheet" id="account-sheet" aria-label="Student Account Menu" aria-hidden="true">
+        <div class="account-sheet__header">
+            <div class="account-user-card">
+                <div class="account-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                        alt="Student Avatar" class="account-avatar-img">
+                    <span class="account-online-dot"></span>
+                </div>
+                <div class="account-user-info">
+                    <span class="account-user-name">Aarav Sharma</span>
+                    <span class="account-user-role"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE &bull; #AV-2026</span>
+                </div>
+            </div>
+            <button class="account-sheet__close-btn" id="account-sheet-close" type="button"
+                aria-label="Close account menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="account-sheet__body">
+            <div class="account-sheet__stats">
+                <div class="account-stat-item"><span class="stat-number">8.92</span><span
+                        class="stat-label">CGPA</span></div>
+                <div class="account-stat-item"><span class="stat-number">86%</span><span
+                        class="stat-label">Attendance</span></div>
+                <div class="account-stat-item"><span class="stat-number">12/14</span><span
+                        class="stat-label">Assignments</span></div>
+            </div>
+
+            <div class="account-sheet__nav-group">
+                <div class="account-group-title">Academic Activity</div>
+                <ul class="account-sheet__list">
+                    <li>
+                        <a href="about.html#profile" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-id-card"></i></span>
+                            <span class="account-item__text">Academic Profile</span>
+                            <span class="account-item__tag">Enrolled</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="service.html#summarizer" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-bookmark"></i></span>
+                            <span class="account-item__text">Saved AI Summaries</span>
+                            <span class="account-item__badge">18</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="crop-calendar.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                            <span class="account-item__text">Course &amp; Exam History</span>
+                            <span class="account-item__badge">Sem 5</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="account-sheet__footer">
+            <button type="button" class="account-sheet__logout-btn" id="logout-demo-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+            </button>
+        </div>
+    </div>
+    <!-- Account Menu Sheet / Dropdown End -->
+
+    <!-- Scanner Modal Start -->
+    <div class="scanner-overlay" id="scanner-modal">
+        <div class="scanner-container">
+            <button class="scanner-close-btn" id="scanner-close" aria-label="Close Scanner">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="scanner-header">
+                <h3>Aavaran AI Note Scanner</h3>
+                <p>Point camera at lecture slides, textbook, or whiteboard for instant OCR &amp; study summaries</p>
+            </div>
+            <div class="scanner-viewfinder">
+                <div class="scanner-frame">
+                    <div class="scanner-corner top-left"></div>
+                    <div class="scanner-corner top-right"></div>
+                    <div class="scanner-corner bottom-left"></div>
+                    <div class="scanner-corner bottom-right"></div>
+                    <div class="scanner-scanline"></div>
+                </div>
+            </div>
+            <div class="scanner-actions">
+                <button class="scanner-action-btn" title="Upload Document or PDF"><i class="fa-solid fa-file-arrow-up"></i></button>
+                <button class="scanner-action-btn primary" title="Capture Notes"><i class="fa-solid fa-camera"></i></button>
+                <button class="scanner-action-btn" title="Toggle Flash"><i class="fa-solid fa-bolt"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Scanner Modal End -->
+
+    <!-- Floating Bottom Navigation Start -->
+    <nav class="floating-bottom-nav" aria-label="Primary navigation">
+        <div class="floating-bottom-nav__bar">
+            <a href="index.html" class="floating-bottom-nav__item" data-nav="index.html" aria-label="Home">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+            </a>
+            <a href="pesticide-calculator.html" class="floating-bottom-nav__item" data-nav="pesticide-calculator.html" aria-label="Academics">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+            </a>
+            <a href="#scanner-modal" class="floating-bottom-nav__item floating-bottom-nav__item--center scanner-trigger-btn"
+                id="scanner-trigger" aria-label="Scan Notes">
+                <span class="floating-bottom-nav__fab">
+                    <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                </span>
+            </a>
+            <a href="soil-health.html" class="floating-bottom-nav__item active" data-nav="soil-health.html" aria-label="Assignments">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+            </a>
+            <a href="quick-actions.html" class="floating-bottom-nav__item" data-nav="quick-actions.html" aria-label="Tools">
+                <span class="floating-bottom-nav__icon"><i class="fa-solid fa-toolbox" aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </nav>
+    <!-- Floating Bottom Navigation End -->
+
+    <!-- Main Page Section Wrapper -->
+    <main class="sh-page-wrapper">
+        <div class="sh-desktop-container">
+
+            <div class="sh-screen-eyebrow">
+                <i class="fa-solid fa-list-check"></i> ACADEMIC TASK COMMAND CENTER
+            </div>
+
+            <!-- Phone Frame -->
+            <div class="sh-phone-frame">
+
+                <!-- Header: Back & Refresh -->
+                <div class="sh-top-header">
+                    <a href="quick-actions.html" class="sh-header-btn" aria-label="Go Back">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <h1 class="sh-screen-title">Assignment Tracker</h1>
+                    <button type="button" class="sh-header-btn" id="sh-refresh-btn" aria-label="Refresh Deadlines">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+
+                <!-- Main Form Canvas -->
+                <div class="sh-form-canvas">
+
+                    <!-- Assignment Progress Card -->
+                    <div class="sh-overview-card">
+                        <div class="sh-overview-label">Overall Submission Progress</div>
+                        <div class="sh-overview-body">
+                            <div class="sh-score-col">
+                                <div class="sh-score-num-row">
+                                    <span class="sh-score-val" id="sh-score-val">84%</span>
+                                </div>
+                                <div class="sh-status-pill">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span id="sh-status-text">High On-Time Rate</span>
+                                </div>
+                                <span class="sh-score-meta" id="sh-last-updated">Semester 5 &bull; 11/14 Completed</span>
+                            </div>
+
+                            <div class="sh-gauge-col">
+                                <svg class="sh-gauge-svg" viewBox="0 0 80 80">
+                                    <defs>
+                                        <linearGradient id="shGaugeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#60A5FA" />
+                                            <stop offset="100%" stop-color="#034bb9" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle class="sh-gauge-bg" cx="40" cy="40" r="32" />
+                                    <circle class="sh-gauge-val" id="sh-gauge-circle" cx="40" cy="40" r="32"
+                                        stroke="url(#shGaugeGradient)"
+                                        stroke-dasharray="168 201.06" />
+                                </svg>
+                                <div class="sh-gauge-center-icon">
+                                    <i class="fa-solid fa-check-double"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Grid Section (6 Cards) -->
+                    <div class="sh-nutrients-section">
+                        <div class="sh-section-title">Submission Metrics</div>
+                        
+                        <div class="sh-nutrients-grid">
+                            <!-- Card 1: Total -->
+                            <div class="sh-nutrient-card">
+                                <span class="sh-nutrient-symbol">TTL</span>
+                                <span class="sh-nutrient-status" id="sh-n-status">Total Assigned</span>
+                                <span class="sh-nutrient-val" id="sh-n-val">14 Tasks</span>
+                            </div>
+
+                            <!-- Card 2: Done -->
+                            <div class="sh-nutrient-card">
+                                <span class="sh-nutrient-symbol" style="color:#034bb9;">SUB</span>
+                                <span class="sh-nutrient-status" id="sh-p-status" style="color:#034bb9;">Submitted</span>
+                                <span class="sh-nutrient-val" id="sh-p-val">11 Done</span>
+                            </div>
+
+                            <!-- Card 3: Pending Alert -->
+                            <div class="sh-nutrient-card alert-low">
+                                <span class="sh-nutrient-symbol" style="color:#EF4444;">DUE</span>
+                                <span class="sh-nutrient-status" id="sh-k-status" style="color:#EF4444;">Due This Week</span>
+                                <span class="sh-nutrient-val" id="sh-k-val">3 Pending</span>
+                            </div>
+
+                            <!-- Card 4: Score -->
+                            <div class="sh-nutrient-card">
+                                <span class="sh-nutrient-symbol">AVG</span>
+                                <span class="sh-nutrient-status" id="sh-ph-val">92%</span>
+                                <span class="sh-nutrient-val" id="sh-ph-status">Grade A+</span>
+                            </div>
+
+                            <!-- Card 5: Missed -->
+                            <div class="sh-nutrient-card">
+                                <span class="sh-nutrient-symbol">PEN</span>
+                                <span class="sh-nutrient-status" id="sh-ec-val">0 Late</span>
+                                <span class="sh-nutrient-val" id="sh-ec-status">No Penalties</span>
+                            </div>
+
+                            <!-- Card 6: GPA -->
+                            <div class="sh-nutrient-card">
+                                <span class="sh-nutrient-symbol">GPA</span>
+                                <span class="sh-nutrient-status" id="sh-oc-val">3.8 / 4.0</span>
+                                <span class="sh-nutrient-val" id="sh-oc-status">Honors</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Priority Action Suggestions Card -->
+                    <div class="sh-suggestions-card">
+                        <div class="sh-suggestions-header">Active Assignments &amp; Deadlines</div>
+                        <div class="sh-suggestions-list">
+                            <div class="sh-suggestion-item">
+                                <div class="sh-suggestion-icon-box" style="background:#FEE2E2; color:#DC2626;">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div style="flex:1;">
+                                    <div style="font-weight:700; color:#0F172A; font-size:13px;">OS Assignment 3: Virtual Memory</div>
+                                    <div style="font-size:11.5px; color:#DC2626; font-weight:600;">Due Tomorrow &bull; 11:59 PM (High Priority)</div>
+                                </div>
+                            </div>
+                            <div class="sh-suggestion-item">
+                                <div class="sh-suggestion-icon-box" style="background:#FEF3C7; color:#D97706;">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div style="flex:1;">
+                                    <div style="font-weight:700; color:#0F172A; font-size:13px;">DSA Programming: Balanced AVL Tree</div>
+                                    <div style="font-size:11.5px; color:#D97706; font-weight:600;">Due in 3 Days &bull; C++ Implementation</div>
+                                </div>
+                            </div>
+                            <div class="sh-suggestion-item">
+                                <div class="sh-suggestion-icon-box" style="background:#EFF6FF; color:#2563EB;">
+                                    <i class="fa-solid fa-database"></i>
+                                </div>
+                                <div style="flex:1;">
+                                    <div style="font-weight:700; color:#0F172A; font-size:13px;">DBMS Normalized Schema Design</div>
+                                    <div style="font-size:11.5px; color:#2563EB; font-weight:600;">Due in 6 Days &bull; 3NF Decomposition</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Main Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="about-footer">
+                        <div class="footer-logo">
+                            <img src="images/footer-logo.svg" height="48" width="165" alt="Aavaran Logo">
+                        </div>
+                        <div class="about-footer-content">
+                            <p>AI-powered student super-app empowering university students to master attendance, calculate CGPA, scan notes, track assignments, and study smarter.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Aavaran</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="quick-actions.html">Quick Tools</a></li>
+                            <li><a href="contact.html">Campus Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>AI Tools &amp; Features</h3>
+                        <ul>
+                            <li><a href="fertilizer-calculator.html">Attendance Calculator</a></li>
+                            <li><a href="pesticide-calculator.html">CGPA / SGPA Simulator</a></li>
+                            <li><a href="#scanner-modal" class="scanner-trigger-btn">AI Note Scanner</a></li>
+                            <li><a href="crop-calendar.html">Exam Timetable</a></li>
+                            <li><a href="farm-expenses.html">Campus Expenses</a></li>
+                            <li><a href="service.html#summarizer">AI Note Summarizer</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-contact">
+                        <div class="footer-info-box">
+                            <h3>Campus Address</h3>
+                            <p>DG 1/2, Action Area I, Newtown, Kolkata, West Bengal 700156</p>
+                        </div>
+                        <div class="footer-info-box">
+                            <h3>Student Support</h3>
+                            <p>(+91) 987 654 3210</p>
+                            <p>support@aavaran.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-copyright-text">
+                            <p>All rights reserved AAVARAN&trade; 2026.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-md-end">
+                        <div class="footer-links-bottom" style="font-size:12.5px; color:#93C5FD;">
+                            <span>Manage College Life &amp; Learn Smarter Daily.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Main Footer End -->
+
+    <!-- Core Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/soil-health.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>

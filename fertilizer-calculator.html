@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aavaran Attendance & Bunk Intelligence Calculator - Track course attendance percentage, calculate allowed bunks, and determine classes needed to reach 75% or 85% requirement.">
+    <meta name="keywords"
+        content="attendance calculator, college attendance, bunk calculator, 75 percent attendance, student attendance tracker, Aavaran">
+    <meta name="author" content="Aavaran Ecosystem">
+    <!-- Page Title -->
+    <title>Attendance Calculator - Aavaran</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="images/favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- Dedicated Calculator Css -->
+    <link href="css/fertilizer-calculator.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="header-inner-row">
+                        <div class="header-action-col header-action-col--left">
+                            <button class="header-btn" id="drawer-open-btn" type="button"
+                                aria-label="Open Navigation Menu" aria-controls="nav-drawer" aria-expanded="false">
+                                <span class="hamburger-icon">
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="header-brand-col">
+                            <a class="navbar-brand header-logo" href="index.html" aria-label="Aavaran Home">
+                                <img src="images/logo.svg" height="46" width="165" alt="Aavaran Logo">
+                            </a>
+                        </div>
+
+                        <div class="header-action-col header-action-col--right">
+                            <button class="header-btn" id="profile-open-btn" type="button"
+                                aria-label="Student Account Menu" aria-controls="account-sheet" aria-expanded="false">
+                                <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                <span class="profile-badge-dot" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Navigation Drawer Start -->
+    <div class="nav-drawer-backdrop" id="nav-drawer-backdrop"></div>
+    <aside class="nav-drawer" id="nav-drawer" aria-label="Site Navigation" aria-hidden="true">
+        <div class="nav-drawer__header">
+            <div class="nav-drawer__brand">
+                <img src="images/logo.svg" height="32" width="120" alt="Aavaran Logo">
+                <span class="nav-drawer__badge"><i class="fa-solid fa-graduation-cap"></i> Student AI</span>
+            </div>
+            <button class="nav-drawer__close-btn" id="nav-drawer-close" type="button"
+                aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="nav-drawer__body">
+            <ul class="nav-drawer__menu">
+                <li>
+                    <a href="index.html" class="nav-drawer__link" data-nav="index.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="nav-drawer__label">HOME</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-drawer__link" data-nav="about.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="nav-drawer__label">ABOUT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#features" class="nav-drawer__link" data-nav="#features">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <span class="nav-drawer__label">FEATURES</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="quick-actions.html" class="nav-drawer__link" data-nav="quick-actions.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-toolbox"></i></span>
+                        <span class="nav-drawer__label">QUICK TOOLS</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fertilizer-calculator.html" class="nav-drawer__link active" data-nav="fertilizer-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-calendar-check"></i></span>
+                        <span class="nav-drawer__label">ATTENDANCE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pesticide-calculator.html" class="nav-drawer__link" data-nav="pesticide-calculator.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span class="nav-drawer__label">CGPA / SGPA</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="crop-calendar.html" class="nav-drawer__link" data-nav="crop-calendar.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-stopwatch"></i></span>
+                        <span class="nav-drawer__label">EXAM TIMETABLE</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-drawer__link" data-nav="contact.html">
+                        <span class="nav-drawer__icon"><i class="fa-solid fa-headset"></i></span>
+                        <span class="nav-drawer__label">CONTACT</span>
+                        <span class="nav-drawer__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- Navigation Drawer End -->
+
+    <!-- Account Menu Sheet / Dropdown Start -->
+    <div class="account-sheet-backdrop" id="account-sheet-backdrop"></div>
+    <div class="account-sheet" id="account-sheet" aria-label="Student Account Menu" aria-hidden="true">
+        <div class="account-sheet__header">
+            <div class="account-user-card">
+                <div class="account-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                        alt="Student Avatar" class="account-avatar-img">
+                    <span class="account-online-dot"></span>
+                </div>
+                <div class="account-user-info">
+                    <span class="account-user-name">Aarav Sharma</span>
+                    <span class="account-user-role"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE &bull; #AV-2026</span>
+                </div>
+            </div>
+            <button class="account-sheet__close-btn" id="account-sheet-close" type="button"
+                aria-label="Close account menu">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="account-sheet__body">
+            <div class="account-sheet__stats">
+                <div class="account-stat-item"><span class="stat-number">8.92</span><span
+                        class="stat-label">CGPA</span></div>
+                <div class="account-stat-item"><span class="stat-number">86%</span><span
+                        class="stat-label">Attendance</span></div>
+                <div class="account-stat-item"><span class="stat-number">12/14</span><span
+                        class="stat-label">Assignments</span></div>
+            </div>
+
+            <div class="account-sheet__nav-group">
+                <div class="account-group-title">Academic Activity</div>
+                <ul class="account-sheet__list">
+                    <li>
+                        <a href="about.html#profile" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-id-card"></i></span>
+                            <span class="account-item__text">Academic Profile</span>
+                            <span class="account-item__tag">Enrolled</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="service.html#summarizer" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-bookmark"></i></span>
+                            <span class="account-item__text">Saved AI Summaries</span>
+                            <span class="account-item__badge">18</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="crop-calendar.html" class="account-sheet__item">
+                            <span class="account-item__icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                            <span class="account-item__text">Course &amp; Exam History</span>
+                            <span class="account-item__badge">Sem 5</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="account-sheet__footer">
+            <button type="button" class="account-sheet__logout-btn" id="logout-demo-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+            </button>
+        </div>
+    </div>
+    <!-- Account Menu Sheet / Dropdown End -->
+
+    <!-- Scanner Modal Start -->
+    <div class="scanner-overlay" id="scanner-modal">
+        <div class="scanner-container">
+            <button class="scanner-close-btn" id="scanner-close" aria-label="Close Scanner">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="scanner-header">
+                <h3>Aavaran AI Note Scanner</h3>
+                <p>Point camera at lecture slides, textbook, or whiteboard for instant OCR &amp; study summaries</p>
+            </div>
+            <div class="scanner-viewfinder">
+                <div class="scanner-frame">
+                    <div class="scanner-corner top-left"></div>
+                    <div class="scanner-corner top-right"></div>
+                    <div class="scanner-corner bottom-left"></div>
+                    <div class="scanner-corner bottom-right"></div>
+                    <div class="scanner-scanline"></div>
+                </div>
+            </div>
+            <div class="scanner-actions">
+                <button class="scanner-action-btn" title="Upload Document or PDF"><i class="fa-solid fa-file-arrow-up"></i></button>
+                <button class="scanner-action-btn primary" title="Capture Notes"><i class="fa-solid fa-camera"></i></button>
+                <button class="scanner-action-btn" title="Toggle Flash"><i class="fa-solid fa-bolt"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Scanner Modal End -->
+
+    <!-- MAIN CALCULATOR SECTION START -->
+    <section class="fertilizer-calc-section">
+        <div class="fc-container">
+
+            <!-- Banner Header -->
+            <div class="fc-header-banner wow fadeInUp">
+                <div class="fc-badge">
+                    <i class="fa-solid fa-calendar-check"></i> Academic Intelligence
+                </div>
+                <h1 class="fc-title">
+                    Attendance &amp; <span class="highlight">Bunk Intelligence Calculator</span>
+                </h1>
+                <p class="fc-subtitle">
+                    Track your live attendance percentage, know exact allowed bunks, and calculate how many classes you must attend to maintain 75% or 80% criteria.
+                </p>
+            </div>
+
+            <!-- Two-Column Main Calculator Grid -->
+            <div class="fc-main-grid">
+
+                <!-- LEFT COLUMN: Input Control Center -->
+                <div class="fc-input-panel">
+
+                    <!-- Card 1: Course & Attendance Numbers -->
+                    <div class="fc-card wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="fc-card-header">
+                            <h3 class="fc-card-title">
+                                <i class="fa-solid fa-book-open-reader"></i> Course &amp; Attendance Records
+                            </h3>
+                            <span class="fc-card-badge">Step 1</span>
+                        </div>
+
+                        <!-- Course Selection -->
+                        <div class="fc-form-group">
+                            <label class="fc-label" for="fc-crop-select">
+                                <span>Select Subject</span>
+                                <span class="fc-label-hint">Semester 5</span>
+                            </label>
+                            <select id="fc-crop-select" class="fc-select">
+                                <option value="cs101" selected>💻 Data Structures &amp; Algorithms (CS101)</option>
+                                <option value="cs102">⚙️ Operating Systems (CS102)</option>
+                                <option value="cs103">🌐 Computer Networks (CS103)</option>
+                                <option value="cs104">🗄️ Database Management Systems (CS104)</option>
+                                <option value="cs105">📐 Discrete Mathematics (CS105)</option>
+                                <option value="cs106">🧪 Software Engineering Lab (CS106)</option>
+                            </select>
+                        </div>
+
+                        <!-- Total Classes Held -->
+                        <div class="fc-form-group">
+                            <label class="fc-label" for="fc-area-input">
+                                <span>Total Classes Conducted</span>
+                                <span class="fc-label-hint">Total lectures held</span>
+                            </label>
+                            <input type="number" id="fc-area-input" class="fc-input" min="1" max="200" step="1"
+                                value="40" placeholder="e.g. 40">
+                        </div>
+
+                        <!-- Classes Attended -->
+                        <div class="fc-form-group">
+                            <label class="fc-label" for="fc-attended-input">
+                                <span>Classes Attended</span>
+                                <span class="fc-label-hint">Your physical attendance</span>
+                            </label>
+                            <input type="number" id="fc-attended-input" class="fc-input" min="0" max="200" step="1"
+                                value="34" placeholder="e.g. 34">
+                        </div>
+
+                        <!-- Target Percentage -->
+                        <div class="fc-form-group">
+                            <label class="fc-label" for="fc-unit-select">
+                                <span>Target Requirement</span>
+                                <span class="fc-label-hint">Minimum threshold</span>
+                            </label>
+                            <select id="fc-unit-select" class="fc-select">
+                                <option value="75" selected>75% Minimum (Exam Eligibility)</option>
+                                <option value="80">80% Safe Buffer (Recommended)</option>
+                                <option value="85">85% High Standing</option>
+                                <option value="90">90% Dean's Honor Roll</option>
+                            </select>
+
+                            <!-- Quick Presets -->
+                            <div class="fc-quick-presets" style="margin-top: 10px;">
+                                <button type="button" class="fc-preset-btn active" data-preset="75">75% Cutoff</button>
+                                <button type="button" class="fc-preset-btn" data-preset="80">80% Safe</button>
+                                <button type="button" class="fc-preset-btn" data-preset="85">85% Honors</button>
+                                <button type="button" class="fc-preset-btn" data-preset="90">90% Dean's</button>
+                            </div>
+                        </div>
+
+                        <!-- Calculate & Reset Buttons -->
+                        <div style="display:flex; gap:12px; margin-top:20px;">
+                            <button type="button" class="btn-default w-100" id="fc-calculate-btn" style="justify-content:center; margin:0;">
+                                <span>Calculate Attendance</span>
+                            </button>
+                            <button type="button" class="btn-default" id="fc-reset-btn" style="background:#F1F5F9; color:#475569; border-color:#E2E8F0; margin:0; padding:10px 18px;">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN: Output & Results Display -->
+                <div class="fc-results-panel">
+
+                    <!-- Live Metric Card -->
+                    <div class="fc-card fc-result-card wow fadeInUp" id="fc-summary-card" data-wow-delay="0.2s">
+                        <div class="fc-card-header">
+                            <h3 class="fc-card-title">
+                                <i class="fa-solid fa-chart-pie"></i> Real-Time Attendance Analysis
+                            </h3>
+                            <div id="fc-res-dap">
+                                <span style="background:#EFF6FF; color:#034bb9; padding:4px 10px; border-radius:999px; font-weight:700; font-size:12px;">Safe • Optimal</span>
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0;">
+                            <!-- Current Percentage -->
+                            <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:18px;">
+                                <div style="font-size:12px; color:#64748B; font-weight:700; text-transform:uppercase;">Current Percentage</div>
+                                <div id="fc-res-urea" style="font-size:32px; font-weight:800; color:#0F172A; margin:6px 0;">85.0%</div>
+                                <div style="font-size:12px; color:#2563EB;"><i class="fa-solid fa-arrow-trend-up"></i> +10.0% above minimum</div>
+                            </div>
+
+                            <!-- Allowed Bunks -->
+                            <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:18px;">
+                                <div style="font-size:12px; color:#64748B; font-weight:700; text-transform:uppercase;">Safe Bunk Allowance</div>
+                                <div id="fc-res-mop" style="font-size:32px; font-weight:800; color:#034bb9; margin:6px 0;">
+                                    5 <span style="font-size:18px; font-weight:600; color:#64748B;">Classes</span>
+                                </div>
+                                <div style="font-size:12px; color:#64748B;">Without falling below target</div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Action Advisory Alert -->
+                        <div id="fc-res-advisory" style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:12px; padding:14px; margin-bottom:20px;">
+                            <div style="color:#034bb9; font-size:13px; line-height:1.5;">
+                                <i class="fa-solid fa-circle-check" style="color:#2563EB; margin-right:6px;"></i>
+                                <strong>Safe Attendance Zone!</strong> You can safely miss up to <strong>5 more classes</strong> while staying above your 75% requirement.
+                            </div>
+                        </div>
+
+                        <!-- Rule of Thumb Guide -->
+                        <div style="border-top:1px solid #E2E8F0; padding-top:18px;">
+                            <h4 style="font-size:14px; font-weight:700; color:#0F172A; margin-bottom:10px;">
+                                <i class="fa-solid fa-lightbulb" style="color:#F59E0B;"></i> Attendance Guidelines
+                            </h4>
+                            <div style="font-size:12.5px; color:#64748B; display:flex; flex-direction:column; gap:6px;">
+                                <span>&bull; Minimum 75% is mandatory for semester end-term exam admit card issuance.</span>
+                                <span>&bull; Official duty (sports, cultural fest, tech club) requires faculty approval within 7 days.</span>
+                                <span>&bull; Maintain at least 80% to absorb emergency leaves without risking detention.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- MAIN CALCULATOR SECTION END -->
+
+    <!-- Main Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="about-footer">
+                        <div class="footer-logo">
+                            <img src="images/footer-logo.svg" height="48" width="165" alt="Aavaran Logo">
+                        </div>
+                        <div class="about-footer-content">
+                            <p>AI-powered student super-app empowering university students to master attendance, calculate CGPA, scan notes, track assignments, and study smarter.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Aavaran</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="quick-actions.html">Quick Tools</a></li>
+                            <li><a href="contact.html">Campus Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="footer-links">
+                        <h3>AI Tools &amp; Features</h3>
+                        <ul>
+                            <li><a href="fertilizer-calculator.html">Attendance Calculator</a></li>
+                            <li><a href="pesticide-calculator.html">CGPA / SGPA Simulator</a></li>
+                            <li><a href="#scanner-modal" class="scanner-trigger-btn">AI Note Scanner</a></li>
+                            <li><a href="crop-calendar.html">Exam Timetable</a></li>
+                            <li><a href="farm-expenses.html">Campus Expenses</a></li>
+                            <li><a href="service.html#summarizer">AI Note Summarizer</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-contact">
+                        <div class="footer-info-box">
+                            <h3>Campus Address</h3>
+                            <p>DG 1/2, Action Area I, Newtown, Kolkata, West Bengal 700156</p>
+                        </div>
+                        <div class="footer-info-box">
+                            <h3>Student Support</h3>
+                            <p>(+91) 987 654 3210</p>
+                            <p>support@aavaran.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-copyright-text">
+                            <p>All rights reserved AAVARAN&trade; 2026.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-md-end">
+                        <div class="footer-links-bottom" style="font-size:12.5px; color:#93C5FD;">
+                            <span>Manage College Life &amp; Learn Smarter Daily.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Main Footer End -->
+
+    <!-- Core Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fertilizer-engine.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>
